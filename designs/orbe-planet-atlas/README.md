@@ -1,14 +1,14 @@
 # ORBE — Planet Atlas
 
-| 分类 | 内容 |
-| --- | --- |
-| [素材](assets/) | 已归档的图片、视频或其他设计资源 |
-| [代码](code/) | 页面与实现文件 |
-| [提示词](prompts/) | 复现及素材生成提示词 |
-| [预览](previews/) | 页面截图或演示录屏 |
-| [文档](docs/) | 说明、清单与相关记录 |
-| [下载](downloads/) | 交付压缩包 |
+- [查看代码](index.html)
+- [复制英文提示词](prompt.md)
+- [下载完整压缩包](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/download.zip)
+- [全部素材](assets/)
 
-[页面源码](code/index.html) · [英文提示词](prompts/PROMPT.en.md) · [原始交付说明](docs/README.md)
+完整解压压缩包，打开 index.html 即可看演示。不要在压缩包内部直接预览。
 
-页面资源内嵌，可单独保存运行。assets/images 保存 PNG 原图与 WebP；assets/lettering 保存 SVG；assets/data 保存字形数据。docs/asset-manifest.json 为历史交付清单，其中部分条目原本未上传到本仓库，不能视为全部在线可用。
+页面已内嵌运行库、纹理和字体，离线可运行。[桌面截图](previews/desktop-preview.jpg) · [手机截图](previews/mobile-preview.jpg) · [菜单截图](previews/menu-preview.jpg)
+
+[素材生成提示词](asset-prompt.md)。assets/ 同时保存原图与优化图片。manifest.json 列出当前实际素材，并保留原交付清单供追溯。
+
+提示词里的仓库图片与代码参考会固定到具体提交版本；后续移动文件不会改变这些历史版本地址。仓库需保持公开且可访问。离线包同时保留本地素材。

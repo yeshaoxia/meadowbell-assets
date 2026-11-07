@@ -1,12 +1,6 @@
-# Repository organization rules
+# Design repository rules
 
-The user requires all current and future design work in this repository to be grouped under designs/.
+The user wants a SIMPLE structure. All designs belong under designs/<project>/.
+Keep index.html, prompt.md, download.zip and README.md directly inside each project. Keep all media in ONE assets/ folder. Use previews/ only when real screenshots exist. Do not create empty category folders, templates or placeholder README files. Preserve original assets. Do not invent missing original implementations or prompts; label asset-only previews clearly.
 
-1. Put every distinct design in designs/<project-slug>/. Never place new design assets or demo files at the repository root.
-2. Keep assets/, code/, prompts/, previews/, docs/, downloads/ and optional versions/ separated. Categorize assets by use or medium; use existing project conventions.
-3. Start new projects from designs/_template/. Use lowercase English kebab-case paths and descriptive filenames.
-4. Update the root and designs/ indexes when adding a project. Explain missing deliverables instead of inventing them.
-5. Preserve original source assets. Preserve historical versions under versions/<version>/ when requested or needed; never silently overwrite unrelated designs.
-6. When relocating files, update all known live URLs, relative references, dynamic asset loaders, prompts, manifests, project README links and download packages. Check reference targets and relevant runtime syntax. Keep commit-pinned historical URLs unchanged unless deliberately regenerating a current prompt.
-7. Record future migrations in designs/migration-map.json. Clearly report externally copied old main-branch URLs that cannot redirect automatically.
-8. Never commit credentials, authentication material, caches, node_modules, or scratch scripts. README files and these instructions can live at root; design deliverables must stay inside designs/.
+Always deliver runnable code and a complete ZIP with local assets. Pin every owned asset/reference URL in prompts to an existing concrete Git commit, never main or a moving tag. Validate the paths and asset hashes. Keep pinned snapshots and repository history; never force-push them away. Update prompt links, demo references, ZIPs and the root index together. Keep this layout stable for future work. Do not claim online hosting is enabled until deployment is verified.

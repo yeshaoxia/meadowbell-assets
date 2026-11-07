@@ -1,28 +1,22 @@
-# 设计作品仓库
+# 设计作品库
 
-所有设计统一存放在 [designs/](designs/)，根目录只保留导航与仓库规则。
+每个项目只保留必要文件：`index.html`（演示代码）、`prompt.md`（英文提示词）、`download.zip`（完整下载包）、`assets/`（全部素材）。有截图才放 `previews/`。
 
-| 项目 | 内容 | 入口 |
-| --- | --- | --- |
-| Meadowbell | 原仓库根目录中的图片与循环视频 | [项目目录](designs/meadowbell/) |
-| Lumora | 图片与循环视频 | [项目目录](designs/lumora/) |
-| ORBE — Planet Atlas | 行星交互页面、素材、提示词、预览 | [项目目录](designs/orbe-planet-atlas/) |
-| SeamSites v3 | 四季森林页面、9张素材、英文提示词 | [项目目录](designs/seamsites/) |
+| 项目 | 代码 | 提示词 | 完整下载 |
+| --- | --- | --- | --- |
+| [Meadowbell](designs/meadowbell/) | [index.html](designs/meadowbell/index.html) | [prompt.md](designs/meadowbell/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/meadowbell/download.zip) |
+| [Lumora](designs/lumora/) | [index.html](designs/lumora/index.html) | [prompt.md](designs/lumora/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/lumora/download.zip) |
+| [ORBE — Planet Atlas](designs/orbe-planet-atlas/) | [index.html](designs/orbe-planet-atlas/index.html) | [prompt.md](designs/orbe-planet-atlas/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/download.zip) |
+| [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) |
 
-## 后续新增设计
+## 查看效果
 
-从 [项目模板](designs/_template/) 复制目录，以清晰的英文小写项目名命名。每个项目单独分类；不要在仓库根目录散放素材。
+下载任一项目 ZIP，完整解压，打开 index.html。也可以下载整个仓库，在本地打开根目录 index.html，统一进入全部演示。
 
-- assets/：素材，继续按图片、视频、天空、动物、植物等用途细分。
-- code/：页面与实现代码。
-- prompts/：复现提示词与图片生成提示词。
-- previews/：真实页面截图、录屏。
-- docs/：说明、素材清单、授权信息。
-- downloads/：面向用户的交付压缩包。
-- versions/：需要保留的历史版本，按 v1、v2 等单独归档。
+ORBE 与 SeamSites 为完整交互设计。Meadowbell、Lumora 原来只有素材，本次提供的是清楚标注的素材预览页，不冒充原始设计。
 
-## 链接迁移
+## 链接稳定性
 
-此次归类移动了38个原有文件，图片与视频内容保持不变。仓库内已知的 main 分支引用已更新。旧的 main/原路径 地址需要改成新路径；此前固定到历史提交的链接不受影响。
+所有提示词中的仓库素材、代码参考均固定到具体 Git 提交版本，而不是 main。后续整理或更新不会改变这些快照地址。仓库删除、改私有或网络限制仍可能影响在线访问，所以每个项目同时提供含本地素材的离线包。
 
-完整路径对应表见 [迁移清单](designs/migration-map.json)。外部复制过的旧提示词建议重新复制新版。没有归档的源码、提示词和截图会明确标注，不会凭空补造。
+以后新设计继续使用 designs/项目名/，不增加空目录或复杂层级。
