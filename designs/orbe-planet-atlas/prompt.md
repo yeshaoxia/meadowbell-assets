@@ -10,13 +10,13 @@ Page title: `ORBE — Planet Atlas`. Language: `en`. The planet, sector and arch
 
 Use the actual assets at these URLs. Do not invent or substitute asset addresses. Read the reference implementation when uncertain about a shader or a glyph; it is the executable counterpart of this brief.
 
-- **Aethra surface albedo, 1774 × 887, 2:1 equirectangular WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/aethra-albedo.webp`
-- **Deep-space environment plate, 1536 × 1024, 3:2 WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/7d22ef71c2bdb3f34b3e898e37799187b437f836/orbe-planet-atlas/assets/deep-field-refined.webp`
-- **Exact PLANET ATLAS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/planet-atlas-lettering.svg`
-- **Exact NEW lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/new-lettering.svg`
-- **Exact WORLDS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/worlds-lettering.svg`
-- **Editable display glyph paths and advance widths, JSON:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/display-glyphs.json`
-- **Working reference HTML, including embedded fonts and shader source:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/code/index.html`
+- **Aethra surface albedo, 1774 × 887, 2:1 equirectangular WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/aethra-albedo.webp`
+- **Deep-space environment plate, 1536 × 1024, 3:2 WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/deep-field-refined.webp`
+- **Exact PLANET ATLAS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/planet-atlas-lettering.svg`
+- **Exact NEW lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/new-lettering.svg`
+- **Exact WORLDS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/worlds-lettering.svg`
+- **Editable display glyph paths and advance widths, JSON:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/assets/display-glyphs.json`
+- **Working reference HTML, including embedded fonts and shader source:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/index.html`
 
 The albedo is original AI-generated geological artwork. It contains folded blue basalt, pale mineral seams, crater basins and fractured icy deposits. Its dimensions above are the actual delivered dimensions; do not describe it as a 4K image. The supplied background is original generated artwork for this Quiet Observatory edition: blue teal and muted violet nebula wisps with subtle champagne detail at the edges, tiny silver stars and a very dark central area. The untouched PNG source is included in the ZIP; runtime uses the same-size optimized WebP. Its full generation prompt is included in ASSET-PROMPT.en.md. The rings are built as geometry with a deterministic radial dust texture; there is no missing ring photograph, GLB or video dependency.
 
@@ -394,3 +394,9 @@ uniform sampler2D image,field;uniform float time,cover,aspect;float hash(vec2 p)
 All three ring layers and all background movement use the same elapsed clock as planet rotation. ON/OFF and the menu's Pause action freeze every continuous effect. Reduced motion renders a completed static scene; controls remain usable. Hidden tabs pause without jumping on return.
 
 Verify the first-frame arc placement, visible progression over subsequent frames, front/back occlusion, mobile composition, pause/resume and absence of shader compilation errors. Keep the offline build self-contained: no video or network dependency is needed. Any preview image must come from this actual implementation, not a separate generative mockup.
+
+## Stable implementation reference
+
+Reference HTML: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/index.html
+
+All repository image and implementation URLs above use the immutable commit `d3ac2df4b5d9d18c002268966b00c507b20ef029`. Download the ZIP for local assets and offline use. Keeping the repository public and retaining its history is still required for online links.
