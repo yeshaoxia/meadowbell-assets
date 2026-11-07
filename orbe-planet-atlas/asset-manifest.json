@@ -10,6 +10,16 @@
     "sha256": "b8d9b6baa0d451baedf93f53d0055000e74fb7996812199600c4dbba6a07687a"
   },
   {
+    "file": "deep-field-refined.png",
+    "bytes": 2018318,
+    "sha256": "d8219f0880021d07a8aef601115ea5ea6efe9495367bc6e2c4af74cfa1fa38f2"
+  },
+  {
+    "file": "deep-field-refined.webp",
+    "bytes": 114708,
+    "sha256": "f0a69657253c94843e00eb670e28eac12ca21ad11c543dfb5f7cb7229f853041"
+  },
+  {
     "file": "deep-field.png",
     "bytes": 1561196,
     "sha256": "dda3936e734c631b5e456d9ebb1fc24a9e1c21f13e096c82312333e5c86772ff"
@@ -33,6 +43,16 @@
     "file": "planet-atlas-lettering.svg",
     "bytes": 1227,
     "sha256": "3ff9785ac042103362734e2c772372ed4e7c35142cd241bba836be6a88287638"
+  },
+  {
+    "file": "THREE-LICENSE.txt",
+    "bytes": 1081,
+    "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+  },
+  {
+    "file": "three-r160.min.js",
+    "bytes": 669884,
+    "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
   },
   {
     "file": "worlds-lettering.svg",

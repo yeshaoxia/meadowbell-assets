@@ -1,4 +1,4 @@
-# ORBE — Planet Atlas · Refined Ice & Mineral Edition
+# ORBE — Planet Atlas · Quiet Observatory Edition — Complete Production Brief
 
 Build this exact experience: a one-screen, non-scrolling, full-viewport exoplanet observatory called **ORBE — Planet Atlas**. Preserve the cinematic composition, precise sci-fi HUD, custom geometric lettering and material fidelity of a high-end interactive art direction website. The centerpiece is Aethra, a fictional blue mineral planet with real 3D terrain shading, a thin cyan atmosphere, a small moon and a broad inclined ice-dust ring system.
 
@@ -11,25 +11,24 @@ Page title: `ORBE — Planet Atlas`. Language: `en`. The planet, sector and arch
 Use the actual assets at these URLs. Do not invent or substitute asset addresses. Read the reference implementation when uncertain about a shader or a glyph; it is the executable counterpart of this brief.
 
 - **Aethra surface albedo, 1774 × 887, 2:1 equirectangular WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/aethra-albedo.webp`
-- **Deep-space environment plate, 1536 × 1024, 3:2 WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/deep-field.webp`
+- **Deep-space environment plate, 1536 × 1024, 3:2 WebP:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/7d22ef71c2bdb3f34b3e898e37799187b437f836/orbe-planet-atlas/assets/deep-field-refined.webp`
 - **Exact PLANET ATLAS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/planet-atlas-lettering.svg`
 - **Exact NEW lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/new-lettering.svg`
 - **Exact WORLDS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/worlds-lettering.svg`
 - **Editable display glyph paths and advance widths, JSON:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/display-glyphs.json`
 - **Working reference HTML, including embedded fonts and shader source:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/orbe-planet-atlas/index.html`
-- **Browser-rendered desktop reference, not an AI mockup:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/orbe-planet-atlas/desktop-preview.jpg`
 
-The albedo is original AI-generated geological artwork. It contains folded blue basalt, pale mineral seams, crater basins and fractured icy deposits. Its dimensions above are the actual delivered dimensions; do not describe it as a 4K image. The supplied background is also original generated artwork. The rings are built as geometry with a deterministic radial dust texture; there is no missing ring photograph, GLB or video dependency.
+The albedo is original AI-generated geological artwork. It contains folded blue basalt, pale mineral seams, crater basins and fractured icy deposits. Its dimensions above are the actual delivered dimensions; do not describe it as a 4K image. The supplied background is original generated artwork for this Quiet Observatory edition: blue teal and muted violet nebula wisps with subtle champagne detail at the edges, tiny silver stars and a very dark central area. The untouched PNG source is included in the ZIP; runtime uses the same-size optimized WebP. Its full generation prompt is included in ASSET-PROMPT.en.md. The rings are built as geometry with a deterministic radial dust texture; there is no missing ring photograph, GLB or video dependency.
 
 For WebGL-bound images use `crossOrigin = "anonymous"` before setting `src`. In Three.js use `TextureLoader.setCrossOrigin("anonymous")`. Check load failures. Never leave a blank hero if a texture request fails.
 
 ### Runtime
 
-Use a pinned Three.js r160 ES module:
+Use the official pinned Three.js r160 classic build, available at:
 
-`https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js`
+`https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js`
 
-Import-map alias: `three`. Do not mix releases or load a second Three.js copy. No React or build step is required. Serve over HTTP or HTTPS; do not rely on `file://` module behavior.
+For the downloadable deliverable, embed this library as an inline classic script and keep its MIT license. Run the scene inside an async IIFE rather than an ES module. Embed the actual WebP asset bytes as `data:image/webp;base64,...` URLs. Fonts are embedded too. The resulting HTML must work when double-clicked from an extracted ZIP, with no HTTP server and no internet connection. Do not leave local cross-origin texture requests or remote module imports in the portable HTML. Keep separate source assets in the ZIP for editing.
 
 ### Fonts
 
@@ -184,7 +183,7 @@ Pointer view offset: normalized pointer x/y in −1…1; target group x drift ±
 
 ## 8. Background and liquid-glass pointer trail
 
-The supplied nebula plate fills the cover frame. Its center stays dark; blue violet dust remains mainly at the lower left and upper right. Render it at approximately 85% brightness. Do not add an Earth cloud horizon or dense floating particles over every region.
+The supplied nebula plate fills the cover frame. Its center stays dark; blue violet dust remains mainly at the lower left and upper right. Render it at82% brightness in the background shader. Keep the natural fine detail of the source image. Do not add a blanket decorative gradient or bright fog across the center. Do not add an Earth cloud horizon or dense floating particles over every region.
 
 Use a WebGL background canvas, capped to 1600 px backing width, alpha false, antialias false. Keep the image visible underneath as a fallback. Upload the image with UNPACK_FLIP_Y_WEBGL true.
 
@@ -211,9 +210,9 @@ Disable trail injection on touch layouts, reduced motion and when paused. On web
 
 Use the supplied PLANET ATLAS SVG as editable inline geometry. Preserve its authored glyph paths. Remove the small index-label text from the hero title and render just one complete phrase. The refined edition prioritizes legibility over a continuously cropped marquee.
 
-On desktop, place the title at left4%, top11%, width92%, aspect ratio2415/280. Inline SVG viewBox is `-25 95 2415 280`, with xMinYMin preservation. Keep the 189-unit glyph cap height and 30-unit geometric strokes. Disable the track animation and hide the extra repeat copies. The entire phrase must be readable in the initial view.
+On desktop, place the title at left5%, top11%, width90%, aspect ratio2415/280. Inline SVG viewBox is `-25 95 2415 280`, with xMinYMin preservation. Keep the 189-unit glyph cap height and 30-unit geometric strokes. Disable the track animation and hide the extra repeat copies. The entire phrase must be readable in the initial view.
 
-The planet still occludes the lower central portion of the title. Never put the lettering above the planet canvas. On mobile use left6%, top88px, width88%, the same aspect ratio. The title should remain a complete phrase rather than enormous clipped fragments.
+The planet still occludes the lower central portion of the title. Never put the lettering above the planet canvas. On mobile use left6%, top96px, width88%, the same aspect ratio. The title should remain a complete phrase rather than enormous clipped fragments.
 
 ## 10. HUD bezel and coordinate readout
 
@@ -229,15 +228,19 @@ Desktop side bulges step inward 26h around bc, with the top/bottom chamfer inter
 
 Four L brackets: offset 5h from viewport corners, arm length 14h, stroke `#cfd6e6`, width `max(1,2h)`. Desktop side rails: x 20h and W−20h, y bc−180h to bc+208h, stroke at opacity 0.55; 3h radius endpoint dots.
 
-HUD labels use Orbe Mono at 23h. ORBE sits centered in the upper notch, top 14h, shifted left 6h. MENU sits right 41h, top 42h. Motion toggle sits left 45h, top 40h.
+The frame retains its original master-unit geometry, but the controls use fixed, legible CSS sizes. ORBE sits centered at top12px, size14px, tracking0.18em. On phones it is top8px and12px. Coordinates are centered at bottom18px, size11px and muted blue; phones use bottom12px and10px.
 
-The motion badge uses a 68 × 22 viewBox: dark rounded rectangle x1 y1 width66 height20 radius5, white 1.4 stroke, four slanted filled stripes and a small dot at `(60,11)` radius2.4. Label `ON` or `OFF` sits 8h to its right.
+MENU and the motion toggle are quiet translucent header buttons, top24px, inset32px from their respective sides, minimum height40px, padding10px14px, gap10px, font12px with tracking0.08em. Surface#08141db3, complete1px border#b7d4df29, radius8px, backdrop blur12px. Hover surface#152b39d9 and border#a9d2df70. On phones: top28px, side inset18px, padding9px11px, gap8px, font11px. Keep their touch height40px.
+
+The Menu button combines the word `Menu` with an authored two-line16×12 icon. Set aria-label `Open menu`, aria-haspopup `dialog`, aria-expanded false. When the menu is open, the two lines translate by±5.5px and rotate±45 degrees. Reset aria-expanded on the dialog close event, including Escape.
+
+The motion badge uses a 68 × 22 viewBox: dark rounded rectangle x1 y1 width66 height20 radius5, white 1.4 stroke, four slanted filled stripes and a small dot at `(60,11)` radius2.4. Display the badge at42×14px on desktop and34×12px on mobile. Label `ON` or `OFF` sits beside it within the header button.
 
 Bottom coordinate readout: `X.0052  //  Y.0053`, size21.3h, centered, bottom27h. On pointermove update to actual rounded client coordinates, four-digit zero padded, keeping the last four digits. Coordinates continue to update when animation is paused.
 
-## 11. Refined editorial copy and porcelain CTA
+## 11. Balanced typography, modest controls and a clear primary action
 
-Side copy begins at46% viewport height, inset6% from the left/right edges. Main copy uses `clamp(14px,1.22vw,20px)`, line height1.65, tracking0.01em. The cyan `+++` marker is12px with20px separation below it. Secondary information is `clamp(11px,0.8vw,13px)`, line height1.8, tracking0.12em and color#9eb0c7, separated by24px.
+Side copy begins at46% viewport height, inset6% from the left/right edges. Main copy is `clamp(14px,1.05vw,17px)`, line height1.65, tracking0.01em. The cyan `+++` marker is11px with16px separation below it. Secondary information is11px, line height1.85, tracking0.10em, color#a2b6c7 and margin-top20px.
 
 Left copy, verbatim:
 
@@ -261,17 +264,17 @@ ONE WORLD. ENDLESS WONDER.
 ORBITAL ARCHIVE / 003
 ```
 
-NEW and WORLDS retain the supplied geometric SVG paths. Desktop word height118u, bottom116u; NEW width328u, WORLDS width514u. Reduce their prominence so the planet remains the focal point.
+Use the supplied NEW and WORLDS SVG paths. Their height is `clamp(40px,6vw,80px)` and bottom inset `clamp(96px,10.5vh,144px)`. NEW left5%, width `clamp(142px,18vw,260px)`. WORLDS right5%, width `clamp(220px,28vw,410px)`. These are supporting words, not a second competing hero.
 
-Identifier: `AETHRA · SECTOR 021`, centered at bottom257u, size `clamp(10px,0.72vw,12px)`, tracking0.15em, padding7px14px. Use a quiet translucent dark plate with a complete1px border to keep this small label readable over the rings.
+Identifier: `AETHRA · SECTOR 021`, centered at bottom `clamp(164px,18vh,230px)`. Font11px, tracking0.14em, padding6px12px, color#c5d8e4, dark translucent surface#06101b9c, complete1px border#a8cfdd20 and4px radius.
 
-The primary action reads **Explore Aethra**, accessible name `Explore planet`. Its chamfered shape remains precise, but its surface is now pale porcelain #e7f2f5 with dark lettering #09131e. The right chip is deep navy #071824 and its chevrons are ice cyan #b2f6ff. This makes the action easy to find against the dark scene.
+The primary action is deliberately moderate: **226×56px** on desktop, **220×54px** on phone. Label `Explore Aethra`, accessible name `Explore planet`. Center it at bottom `clamp(62px,8.5vh,112px)` on desktop and44px on phones.
 
-Desktop button box410u×102u, minimum236×60px, bottom124u, centered. Keep the authored360×102 SVG body geometry from the reference HTML, centered without stretching. Put the HTML label60u from the button-box left edge, vertically centered, at `clamp(14px,1.05vw,18px)`. The extra label inset compensates for the centered SVG artwork inside the wider box.
+Use a normal HTML button with a pale porcelain surface#e8f1f3, dark text#102333, complete1px light border, radius10px and soft downward shadow `0 8px 24px #0006`. Flex layout, centered items, space-between, gap16px, padding8px8px8px20px. The label is14px on desktop and13px on mobile. Do not enlarge the button with the master-frame scale or stretch a framed SVG around it.
 
-Hover raises the button3px with a restrained downward cyan shadow. The chip shifts left3px and chevrons right4px over0.5s on `cubic-bezier(.2,.8,.2,1)`. Press returns to the resting elevation. Keep visible keyboard focus.
+Inside the right edge, place a38×38px navy tile#102636 with6px radius. Its18×18 authored SVG arrow uses viewBox0 0 20 20 and path `M5 15L15 5M5 5H15V15`, stroke1.5, round caps/joins, color#bdeaf0.
 
-Dialogs use a dark translucent surface,16px radius,40px padding and a subdued complete border. Title54px with tracking−0.04em. Lighting controls use6px radii and clear selected states. On phones use28px dialog padding and42px title.
+Hover raises the button2px, changes surface to#f4fcff, deepens its neutral downward shadow and moves the arrow2px right/up. Tile changes to#1b4152. Transition0.35s cubic-bezier(.22,1,.36,1); press returns to resting elevation. Keep visible2px cyan keyboard focus with5px offset.
 
 ## 12. Working interactions
 
@@ -281,36 +284,51 @@ ENTER ORBIT opens an accessible native dialog titled `Aethra.` with the planet d
 
 Include two real lighting controls: NATURAL LIGHT and SURVEY LIGHT. Survey mode smoothly raises emissiveIntensity from0.022 toward0.222 and reduces key light from3.35 toward2.65, revealing the shadowed terrain. Buttons expose aria-pressed. Do not attach them to empty event handlers.
 
-MENU opens navigation: Aethra archive, About the atlas, Toggle motion. Archive opens the same planet content. About explains this fictional interactive art study. Toggle motion operates the actual animation state. Dialog supports Escape, close button, outside dismissal and correct focus return.
+MENU opens a native dialog styled as a compact right-side navigation sheet. Desktop box:400px wide, height `min(640px,calc(100dvh - 40px))`, top20px, right20px, margin0, padding32px and16px radius. Use a complete1px cool border, deep translucent#08131df5 surface and a neutral downward shadow. Do not make it an oversized central alert. Backdrop is#02070db3 with10px blur.
+
+Its caption is `ORBE / PLANET ATLAS`. Heading: `Your next discovery.`, font32px, normal weight, line height1.25, max-width260px. Keep a36×36px close control at top/right18px with8px radius and an authored cross icon.
+
+Three navigation rows:
+
+1. `Explore Aethra` / `Surface, atmosphere & rings` — opens the planet archive.
+2. `About the atlas` / `A study of worlds beyond our own` — opens the about view.
+3. `Pause the orbit` or `Resume the orbit`, matching current state / `Set the pace of your exploration` — changes the actual animation state and closes the menu.
+
+Rows have minimum height80px, padding16px12px, gap16px, radius8px and a quiet lower separator. Number11px, primary17px, secondary12px. Use a small diagonal arrow at the right. Hover gently reveals a full outline and translucent surface. Because rows contain nested spans and icons, delegate events with `event.target.closest('[data-panel],[data-motion],[data-view]')`; the entire row must respond, not just its outer padding.
+
+Menu footer sits below the rows with automatic flexible spacing: a tiny muted mint dot, `SECTOR 021 / ORBITAL ARCHIVE`, and the lines `One world. A thousand perspectives.` / `Take your time. Look a little closer.`. An extremely faint authored orbital line drawing may sit behind the footer at opacity0.09. Keep it decorative and noninteractive.
+
+Planet and About dialogs use width `min(540px,calc(100vw - 40px))`, max-height `calc(100dvh - 40px)`, padding32px, radius16px and title40px. Body text14px with comfortable line height. Archive fields form a restrained two-column definition list. Put the two lighting controls in a segmented group,5px inset,6px gap,40px minimum control height. Active surface#c9e8ed, active text#132a36. All dialog views support Escape, close and outside dismissal. Detect outside clicks using dialog bounding coordinates so clicking internal padding does not accidentally dismiss it. Preserve native focus return.
 
 For deterministic inspection support `?still=1`: start paused at the initial planet orientation and the complete static title. This is a repeatable browser reference state, not a separate painted mockup.
 
 ## 13. Entrance and loading
 
-The background is visible early. Start the interface reveal after fonts and background decoding, with a3.5-second failsafe. Title and UI fade in over1.0–1.2s, side copy delayed0.2s, bottom words0.35s, CTA0.45s.
+The background is visible early. Start the interface reveal after fonts and background decoding, with a3.5-second failsafe. Title and UI fade in over1.0–1.2s, side copy delayed0.15s, bottom words0.25s, CTA0.35s.
 
 While the texture loads show `ACQUIRING ORBITAL SIGNAL` with a thin quiet indicator. After the first complete rendered frame, fade the Three.js canvas in over1.6s and remove the loading status. Avoid a white flash, a default cube or a sphere shown briefly without its map.
 
 If texture or renderer initialization fails, show a readable retry control rather than an empty center. On context loss retain the background and interface, stop animation and offer reload. Do not claim a model loaded successfully when a fallback is shown.
 
-## 14. Phone layout, reduced motion and performance
+## 14. Mobile sizes, short-screen behavior and reduced motion
 
-Breakpoint: **820px**.
+Breakpoint820px. The design must fit375×812 without horizontal scrolling.
 
-- HUD uses W/860; omit rails and side bulges.
-- Title: left6%, top88px, width88%, aspect ratio2415/280. Show the complete title.
-- Side copy: top174px, left/right22px; main12px with1.6 line height, secondary10px with14px top gap. Marker11px with12px gap. Below720px viewport height, move copy to160px and hide its secondary metadata.
-- 3D stage: top160px, bottom100px. Cover-fit the master canvas inside this stage, then scale the group uniformly to0.71; group y−690. Do not nonuniformly scale the canvas contents.
-- NEW: left20px, width110px, height40px, bottom126px.
-- WORLDS: right20px, width164px, height40px, bottom126px.
-- Identifier: bottom197px, size10px, padding6px10px. In short viewports use bottom190px.
-- CTA: width248px, height62px, bottom38px; label14px, left36px.
-- Top controls use11px text. Brand12px. Coordinates10px.
-- No pointer-trail injection on touch layouts. No horizontal page scrolling at375px.
+- HUD uses W/860 and removes rails/bulges. Header control sizes are specified in section10.
+- Full title: left6%, top96px, width88%, aspect2415/280.
+- Side copy: top178px, inset22px, main12px/1.6; marker11px with10px gap; secondary11px, tracking0.015em, margin-top14px and line-height1.8.
+- 3D stage: top170px, bottom105px. Cover-fit the2048×1360 master canvas in this area, group scale0.71, group y−690. Keep shadow uniforms in the same coordinate system.
+- NEW: left20px, width112px, height36px, bottom120px. WORLDS: right20px, width168px, same height/bottom.
+- Identifier: bottom180px, size10px, padding5px9px.
+- CTA:220×54px, bottom44px, padding7px7px7px18px, label13px and38×38px arrow tile.
+- General dialogs: padding28px24px, radius14px, title34px.
+- Menu: left/right/top12px, width `calc(100vw - 24px)`, height `min(680px,calc(100dvh - 24px))`, padding28px24px. Heading30px; navigation row minimum76px; primary16px. Do not overflow the screen or crowd the close control.
 
-Reduced motion: no marquee, no continuous rotation, no pointer parallax or trail injection, no entrance movement. Show the completed static scene. The motion toggle's initial state reflects reduced-motion preference. Coordinates and dialog interactions remain available.
+Below720px viewport height on mobile: copy top160px and hide secondary metadata; 3D stage top145px/bottom100px; identifier bottom172px. Menu heading28px with tighter margins, row minimum66px and10px padding. Hide the extra footer sentence if necessary, preserving all actions.
 
-Pause rendering work in hidden tabs. Use delta time, not frame-count-dependent rotation. Re-render after resize **even while paused**; resizing the renderer clears the canvas, and omitting that redraw makes the planet disappear. Cancel animation on context loss. Keep the draw-call count small. Never rebuild the mesh or reallocate the texture every frame.
+Reduced motion disables continuous rotation, parallax, trail injection and entrance animation. Show the completed static scene; controls and coordinates still work. The initial motion-toggle state reflects the preference.
+
+Pause rendering in hidden tabs. Clamp delta time to0–0.05s. Re-render after resizing even while paused; renderer resize clears the canvas. Stop on context loss. Keep draw calls small and never rebuild meshes/textures per frame.
 
 ## 15. Acceptance criteria and handoff
 
@@ -325,4 +343,10 @@ Verify the actual running page at desktop1440×960 and phone375×812, including 
 7. There are no shader compilation errors, missing-texture errors or uncaught browser errors.
 8. The result is shown in a live browser. Any exported preview must be captured from that working code, not separately generated to look better.
 
-Deliver the runnable HTML, the exact asset list, the English recreation brief, a desktop preview and a phone preview. Explain any remaining verification limit plainly. Fidelity takes priority over adding unrelated sections, testimonials, dashboards or extra planets.
+Deliver the runnable HTML, the exact asset list, the English recreation brief, desktop and phone previews when browser capture is available. Never include a preview from a previous edition as if it represented the final code. Explain any remaining verification limit plainly. Fidelity takes priority over adding unrelated sections, testimonials, dashboards or extra planets.
+
+## 16. Portable download and verification record
+
+The final package is an extracted-folder deliverable with a fully self-contained index.html. Its Three.js library, WebP texture bytes and WOFF2 font bytes are embedded. It has no remote runtime imports, no remote script/image src and no local texture requests. Keep the editable assets, full prompt and library license alongside it. A static HTTP preview may be used for browser interaction checks, but do not describe that as proof of file-protocol behavior. If the browser tool disallows file URLs, disclose that verification limit.
+
+For this edition, verify desktop1440×960, mobile375×812 and a short mobile viewport. Confirm the primary action dimensions, menu dimensions, complete click targets, lighting selection, Escape dismissal, expanded-state reset, zero horizontal overflow and no runtime errors. If screenshot capture fails, report it; do not fabricate a replacement screenshot.
