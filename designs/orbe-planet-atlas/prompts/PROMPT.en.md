@@ -16,7 +16,7 @@ Use the actual assets at these URLs. Do not invent or substitute asset addresses
 - **Exact NEW lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/new-lettering.svg`
 - **Exact WORLDS lettering, SVG:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/worlds-lettering.svg`
 - **Editable display glyph paths and advance widths, JSON:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d95638c8e654c1925dfa63770cd7adbaa29b3532/orbe-planet-atlas/assets/display-glyphs.json`
-- **Working reference HTML, including embedded fonts and shader source:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/orbe-planet-atlas/index.html`
+- **Working reference HTML, including embedded fonts and shader source:** `https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/code/index.html`
 
 The albedo is original AI-generated geological artwork. It contains folded blue basalt, pale mineral seams, crater basins and fractured icy deposits. Its dimensions above are the actual delivered dimensions; do not describe it as a 4K image. The supplied background is original generated artwork for this Quiet Observatory edition: blue teal and muted violet nebula wisps with subtle champagne detail at the edges, tiny silver stars and a very dark central area. The untouched PNG source is included in the ZIP; runtime uses the same-size optimized WebP. Its full generation prompt is included in ASSET-PROMPT.en.md. The rings are built as geometry with a deterministic radial dust texture; there is no missing ring photograph, GLB or video dependency.
 
