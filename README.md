@@ -9,6 +9,10 @@
 | [ORBE — Planet Atlas](designs/orbe-planet-atlas/) | [index.html](designs/orbe-planet-atlas/index.html) | [prompt.md](designs/orbe-planet-atlas/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/download.zip) |
 | [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) |
 
+| [Saffron 复刻初稿](designs/saffron/) | [index.html](designs/saffron/index.html) | [prompt.md](designs/saffron/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/saffron/download.zip) |
+
+Saffron [在线初稿演示](https://saffron-webgl-recreation.vercel.app)，并非原视频的像素级一致复现。
+
 ## 查看效果
 
 下载任一项目 ZIP，完整解压，打开 index.html。也可以下载整个仓库，在本地打开根目录 index.html，统一进入全部演示。
