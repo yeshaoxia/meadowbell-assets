@@ -1,38 +1,34 @@
-# ORBE — Planet Atlas · Quiet Observatory Edition
+# ORBE — Planet Atlas · Orbital Flow Edition
 
-A real-time Three.js exoplanet experience built from original generated geology and deep-space artwork.
+## 打开方式 / Open
 
-## Run
+完整解压压缩包后，双击 index.html。渲染库、贴图和字体均已内嵌，无需联网、安装或启动服务。不要在压缩包内部直接预览网页。
 
-Extract the ZIP, then double-click `index.html` in a modern browser. No server, installation or internet connection is required. The rendering library, images and fonts are embedded in the HTML.
+Extract the ZIP completely, then open index.html in a modern browser. The HTML embeds the rendering library, textures and fonts and has no network dependency.
 
-解压压缩包后，双击 index.html 即可。无需安装、启动服务或联网。请先解压，不要在压缩包内部预览。
+## Motion
 
-`?still=1` opens the reproducible initial frame. Motion, the planet archive, lighting controls and the menu are functional. The fictional planet and archive entries are concept art.
+- Two clearly visible, tapered luminous arcs orbit on separate ring lanes, with real front/back occlusion.
+- Ice dust travels at different speeds at different radii. Mobile density and point sizes are reduced for a cleaner result.
+- The nebula has broad drift and animated internal flow. Foreground star parallax supplies a separate depth layer.
+- The mobile background composition keeps the visible nebula edges instead of cropping them out.
+- ON/OFF and the menu's Pause action freeze all continuous motion. Reduced-motion preference is respected.
 
-## Contents
+## Included files
 
-- `index.html`: runnable source with embedded fonts.
-- `PROMPT.en.md`: full English production recreation brief with real immutable asset URLs.
-- `assets/`: original generated PNGs, optimized WebP copies and authored editable SVG lettering.
-- `ASSET-PROMPT.en.md`: the complete generation prompt for the new cyan-violet nebula background.
-- `desktop-preview.jpg`, `mobile-preview.jpg`, `menu-preview.jpg`: actual browser captures from the living-orbit build.
-- `asset-manifest.json`: file hashes and actual sizes.
+- index.html: complete, self-contained executable webpage.
+- PROMPT.en.md: full English recreation brief, exact shader specifications and fixed asset URLs.
+- ASSET-PROMPT.en.md: the background artwork generation prompt.
+- assets/: editable artwork, original PNGs, optimized WebP copies, SVG lettering and Three.js MIT license.
+- desktop-preview.jpg, mobile-preview.jpg, menu-preview.jpg: actual browser captures of this edition.
+- asset-manifest.json: original asset sizes and hashes.
 
-The PNG originals were generated with the built-in image-generation tool. WebP copies retain the original pixel dimensions. They are 1774 × 887 for the surface atlas and 1536 × 1024 for the environment, not 4K assets. Runtime embeds the official Three.js r160 classic build, originally obtained from jsDelivr. Its MIT license is included in assets/THREE-LICENSE.txt. Fonts are Share Tech Mono and Share Tech from Google Fonts, embedded in the HTML.
+## Controls
 
-## Publication
+Explore Aethra opens the archive and lighting controls. Menu opens navigation, information and motion controls. The close button, Escape and outside clicks dismiss dialogs. The desktop CTA is226×56px and the phone CTA is220×54px.
 
-Original assets are preserved in commit d95638c8e654c1925dfa63770cd7adbaa29b3532 of yeshaoxia/meadowbell-assets under `orbe-planet-atlas/assets/`. Existing repository content is preserved.
+## Verification
 
-## Refined controls
+The scene and shaders were exercised in a browser at desktop and phone sizes. No runtime/shader errors were reported. The ZIP is integrity-checked and JavaScript syntax checks pass. The browser automation tool does not permit file:// navigation, so the direct local-file protocol was not exercised through that tool; the HTML is built with embedded runtime resources, classic scripts and data-URI textures specifically to remove local cross-origin/module dependencies.
 
-The primary action is 226 × 56 px on desktop and 220 × 54 px on mobile. The menu is a 400 px wide, maximum 640 px high panel on desktop; it fits inside the phone viewport with 12 px margins. Header controls keep a 40 px minimum height. The planet archive, lighting selection, menu navigation, animation toggle and Escape dismissal are functional.
-
-The new cyan-violet environment asset is pinned to GitHub commit 7d22ef71c2bdb3f34b3e898e37799187b437f836. The original geology remains in its original asset commit.
-
-Verification: the running page was checked through its DOM and interactions at desktop and mobile sizes. Browser capture was available for the living-orbit edition; the ZIP includes fresh desktop, phone and menu captures. The browser tool does not allow file:// navigation, so direct double-click behavior could not be exercised in that tool; the portable HTML embeds all runtime resources and uses no module imports or external image requests.
-
-## Living orbit edition
-
-The ring particles now orbit with radius-dependent speed and subtle shimmer. The dust bands carry a faint traveling light pattern. The nebula drifts slowly, with restrained starlight twinkle and brightness breathing. All effects share the existing pause state and respect reduced motion.
+All planetary content is fictional art direction. Three.js r160 is MIT-licensed; its license is included. Artwork dimensions are the real delivered dimensions and are not described as4K.

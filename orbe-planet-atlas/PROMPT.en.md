@@ -1,4 +1,4 @@
-# ORBE — Planet Atlas · Quiet Observatory Edition — Complete Production Brief
+# ORBE — Planet Atlas · Orbital Flow Edition — Complete Production Brief
 
 Build this exact experience: a one-screen, non-scrolling, full-viewport exoplanet observatory called **ORBE — Planet Atlas**. Preserve the cinematic composition, precise sci-fi HUD, custom geometric lettering and material fidelity of a high-end interactive art direction website. The centerpiece is Aethra, a fictional blue mineral planet with real 3D terrain shading, a thin cyan atmosphere, a small moon and a broad inclined ice-dust ring system.
 
@@ -165,7 +165,7 @@ In the fragment shader derive radial UV from `length(localPosition.xy)`, not the
 
 The planet casts a shadow onto the far ring. For ring position P relative to the planet center and sun S, `along = dot(P,S)` and `nearDistance = length(P-S*along)`. Only `along < 0` can be shadowed. Use a softened sphere radius test from `R-9` to `R+9` and reduce brightness by up to 76%.
 
-Dust grain multiplier: `0.985 + 0.015*sin(angle*71 + radius*0.12)`. Light multiplier: `0.65 + 0.35*abs(dot(ringNormal,S))`. Final RGB is sampled RGB × light × planetShadow × grain × 1.65. Final alpha is sampled alpha × 0.72. Do not add a solid opaque ellipse behind the ring.
+For visible azimuthal motion, particle flow and the separate luminous arc layer, use section17. Preserve the base ring illumination and shadow behavior. Do not add a solid opaque ellipse behind the ring.
 
 Add 2,600 tiny depth-tested ice particles on the same ring plane. Use the same seeded random generator; radius `545+pow(random(),0.8)*260`, angle `random()*2*PI`, local z within ±0.6 units. Point sizes 0.5–1.8 pixels. Use a soft circular point shader, pale blue, additive alpha no greater than 0.32 and depthWrite false. Particles should read as fine ice dust, not large stars or glitter confetti.
 
@@ -183,9 +183,9 @@ Pointer view offset: normalized pointer x/y in −1…1; target group x drift ±
 
 ## 8. Background and liquid-glass pointer trail
 
-The supplied nebula plate fills the cover frame. Its center stays dark; blue violet dust remains mainly at the lower left and upper right. Render it at82% brightness in the background shader. Keep the natural fine detail of the source image. Do not add a blanket decorative gradient or bright fog across the center. Do not add an Earth cloud horizon or dense floating particles over every region.
+The supplied nebula plate fills the cover frame. Its center stays dark; blue violet dust remains mainly at the lower left and upper right. Render it at86% brightness in the background shader. Keep the natural fine detail of the source image. Do not add a blanket decorative gradient or bright fog across the center. Do not add an Earth cloud horizon or dense floating particles over every region.
 
-Use a WebGL background canvas, capped to 1600 px backing width, alpha false, antialias false. Keep the image visible underneath as a fallback. Upload the image with UNPACK_FLIP_Y_WEBGL true.
+Use a WebGL background canvas, capped to1440px backing width on desktop and900px on mobile, alpha false, antialias false. Keep the image visible underneath as a fallback. Upload the image with UNPACK_FLIP_Y_WEBGL true.
 
 Use **two 256 × 170 RGBA textures and framebuffers in ping-pong**, matching the original ORBE glass trail technique. Each active frame:
 
@@ -351,18 +351,46 @@ The final package is an extracted-folder deliverable with a fully self-contained
 
 For this edition, verify desktop1440×960, mobile375×812 and a short mobile viewport. Confirm the primary action dimensions, menu dimensions, complete click targets, lighting selection, Escape dismissal, expanded-state reset, zero horizontal overflow and no runtime errors. If screenshot capture fails, report it; do not fabricate a replacement screenshot.
 
-## 17. Animated ice rings and a living deep-space environment
+## 17. Visible cinematic motion — orbital light arcs and flowing nebula
 
-Add restrained continuous motion to both the rings and the background without changing the established composition or control sizes. Use one shared scene clock; it advances only while motion is enabled, reduced motion is false and the document is visible. Clamp elapsed frame time to0–0.05s. Pause and resume from the stored elapsed time rather than from wall-clock time, so resuming does not jump.
+The motion must be clearly perceptible within the first few seconds. Keep the established composition, typography and controls stable. Use the shared scene clock, which advances only while motion is enabled, reduced motion is false and the document is visible. Clamp dt to0–0.05s and resume from stored elapsed time without a wall-clock jump.
 
-**Ice-dust orbit:** give the ring-particle ShaderMaterial a shared `uTime` uniform. In its vertex shader, derive local radius `r=length(position.xy)` and rotation angle `a=uTime*0.018*pow(600/max(r,1),1.5)`. Rotate the initial local x/y by this angle before model-view projection; keep z unchanged. Particles nearer the planet move a little faster. Retain the ring-plane transform, depth testing and planet occlusion. Do not rotate the whole hero, swing the ring plane or rebuild particle buffers every frame.
+### Ring movement
 
-**Particle shimmer:** pass `shimmer=0.72+0.28*sin(uTime*0.72+position.x*0.051+position.y*0.037)` to the particle fragment shader. Multiply the existing soft circular alpha by this value. Keep point sizes and the pale icy color unchanged. This should read as small mineral glints, not fast flashing lights.
+Use three coordinated layers: translucent ice bands, orbiting dust and two tapered luminous arcs. Do not merely rotate an almost rotationally symmetric ring texture and call that visible motion.
 
-**Ring-band flow:** give the annulus material the same shared time uniform. Let `angle=atan(localPosition.y,localPosition.x)`. Replace the static grain multiplier with `0.92+0.06*sin(angle*12-uTime*0.18+radius*0.06)+0.02*sin(angle*47+uTime*0.11+radius*0.12)`. Preserve the radial texture, soft gaps, reciprocal shadows and all the existing depth behavior. This creates a low-contrast traveling dust pattern without changing the silhouette.
+**Dust:** keep the2,600 seeded particles on the real ring plane. Set desktop point sizes to1.0–2.8px. On mobile draw only the first1,000 particles and multiply point sizes by0.65, preventing a dense glitter-like appearance. In the vertex shader, radius `r=length(position.xy)`, orbital angle `a=time*0.11*pow(600/max(r,1),1.5)`. Rotate initial x/y by a; keep z fixed. This provides visibly different speeds at different radii. Shimmer is `0.65+0.35*sin(time*1.2+position.x*0.051+position.y*0.037)`. Multiply the soft circular point alpha by0.58 and shimmer. Preserve depth testing, so the planet hides rear-side dust.
 
-**Nebula drift:** in background texture sampling, apply a permanent1.8% inset zoom to keep the edges covered. Let `drift=vec2(sin(time*0.045)*0.0035,(cos(time*0.036)-1)*0.0025)` and sample at `0.5+(uv-0.5)*0.982+drift`, then clamp. Keep existing glass-trail refraction on top of this sampling motion. Do not move the page's typography, header controls or HUD.
+**Dust-band transport:** use grain multiplier `0.82+0.12*sin(angle*9-time*0.68+radius*0.045)+0.06*sin(angle*31-time*0.42+radius*0.13)`. Radial bands, gaps, geometry and shadows remain intact.
 
-**Starlight and breathing:** derive a star mask from the source image brightness with `smoothstep(0.42,0.82,max(color.r,max(color.g,color.b)))`. Use a spatially varied sine `sin(time*0.65+floor(uv.x*97)*1.73+floor(uv.y*79)*2.19)` to add at most(0.018,0.024,0.03) times the star mask. Multiply the background brightness by `1+0.018*sin(time*0.14)`. Preserve the82% background exposure. Only existing bright star pixels should shimmer; do not add a screen-wide flicker or unrelated particle rain.
+**Two luminous arcs:** add a second mesh that reuses the ring geometry and rotation. Use an additive, transparent DoubleSide shader with depthTest true, depthWrite false, renderOrder2 and the shared time uniform. The material is an intentional stylized orbital-light accent for this fictional world. The planet still occludes the rear arc through its real depth buffer.
 
-All of these effects must stop with the existing motion toggle, with the menu's Pause action and under reduced-motion preference. Pause motion in hidden tabs. The interface and archive lighting controls remain usable when the visual scene is paused. The fully embedded offline build must retain these shaders and require no video, network requests or extra files to animate.
+The inner arc is centered at radius625, with4-unit core and17-unit soft halo. It advances at0.38 radians per second, approximately one revolution per16.5 seconds. Its initial phase is−1.6 radians, deliberately on the visible near side. The outer arc is centered at radius760, with3-unit core,13-unit halo and0.24 radians per second, initial phase−2.8. Their different rates create layered movement rather than a mechanically synchronized sweep.
+
+Use long, exponentially fading tails, bright compact heads and cool cyan/violet colors. They must be short moving arcs, never two complete glowing circles. The exact arc fragment shader is below; the vertex shader passes local geometry position as `local` and projects it with the normal model/view/projection matrices:
+
+```glsl
+uniform float uTime;varying vec3 local;void main(){float r=length(local.xy),a=atan(local.y,local.x);float p=mod(uTime*.38-a-1.6+12.56637,6.283185),q=mod(uTime*.24-a-2.8+12.56637,6.283185);float tail=exp(-p/.8)*(1.-smoothstep(1.6,2.3,p));float tail2=exp(-q/.6)*(1.-smoothstep(1.2,1.9,q));float head=exp(-pow(min(p,6.283185-p)/.07,2.));float head2=exp(-pow(min(q,6.283185-q)/.06,2.));float core=exp(-pow((r-625.)/4.,2.)),halo=exp(-pow((r-625.)/17.,2.));float core2=exp(-pow((r-760.)/3.,2.)),halo2=exp(-pow((r-760.)/13.,2.));float first=(core*.66+halo*.18)*(tail+head*.5);float second=(core2*.46+halo2*.13)*(tail2+head2*.4);vec3 light=vec3(.28,.79,1.)*first+vec3(.69,.60,1.)*second+vec3(.68,.89,1.)*core*head*.4;gl_FragColor=vec4(light,clamp(first+second,0.,1.));}
+```
+
+### Background movement and depth
+
+Use actual animated texture sampling, not an imperceptible uniform displacement. The nebula moves on three scales: broad drift, smoothly advected dust structure and independent foreground stars. Keep the middle dark enough for the planet and preserve all interface positions.
+
+The texture sample starts with8% inset zoom to cover motion without exposed edges. Drift is `vec2(sin(time*0.12)*0.018, sin(time*0.09)*0.012)`. Derive a three-octave noise flow field and apply up to0.055 UV displacement where the source image has visible nebula brightness; preserve the dark center. A second advected noise field modulates cloud illumination. Foreground star cells translate independently, producing visible depth/parallax. Global brightness breathing is only±3.5% and never replaces spatial movement.
+
+Compute the shared flow/light fields once per fragment, outside the three chromatic samples. Use an arithmetic hash rather than repeated sine hashing. Cap the background backing width at1440 on desktop and900 on phones to keep the effect practical. On mobile use a viewport-filling background canvas, a0.86 horizontal texture crop and a backing height proportional to its actual displayed height. Cap its pixel ratio at1.5 and resize when either backing dimension changes. Pass the canvas aspect ratio to the foreground star grid so the points remain round. This mobile composition keeps the visible nebula edges instead of cropping them away with the desktop cover frame. Do not allocate new textures or particle buffers per frame.
+
+The following is the exact background fragment shader. The vertex shader supplies `v` in0…1; uniforms are the image texture, ping-pong trail texture, shared elapsed time and cover crop. Preserve the existing capsule trail simulation from section8:
+
+```glsl
+precision mediump float;
+varying vec2 v;
+uniform sampler2D image,field;uniform float time,cover,aspect;float hash(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}float fbm(vec2 p){return .57*noise(p)+.28*noise(p*2.03+17.)+.15*noise(p*4.01+31.);}vec3 sampleAt(vec2 uv,vec2 flow,float light){vec2 drift=vec2(sin(time*.12)*.018,sin(time*.09)*.012);vec2 at=.5+(uv-.5)*.92+drift;at.x=.5+(at.x-.5)*cover;vec3 base=texture2D(image,clamp(at,.001,.999)).rgb;float cloud=smoothstep(.035,.24,dot(base,vec3(.2126,.7152,.0722)));at+=flow*.055*cloud;vec3 col=texture2D(image,clamp(at,.001,.999)).rgb;return col*mix(1.,light,cloud);}void main(){vec2 cloudFlow=vec2(fbm(v*3.1+vec2(time*.035,-time*.022)),fbm(v*3.1+vec2(-time*.025,time*.031)+23.))-.5;float cloudLight=.90+.16*fbm(v*4.2+vec2(time*.06,-time*.035));float t=texture2D(field,v).r;vec2 g=vec2(texture2D(field,v+vec2(1.5/256.,0.)).r-texture2D(field,v-vec2(1.5/256.,0.)).r,texture2D(field,v+vec2(0.,1.5/170.)).r-texture2D(field,v-vec2(0.,1.5/170.)).r);vec2 rib=vec2(sin(v.y*180.+time*2.2+sin(v.x*70.+time)*2.4),cos(v.x*150.-time*1.7+sin(v.y*60.)*2.2));vec2 off=g*.05+rib*.013*smoothstep(0.,.6,t);vec3 c=vec3(sampleAt(v+off*1.25,cloudFlow,cloudLight).r,sampleAt(v+off,cloudFlow,cloudLight).g,sampleAt(v+off*.75,cloudFlow,cloudLight).b);c=mix(c,c*vec3(1.08,.98,1.15)+vec3(.05,.03,.09),smoothstep(0.,.5,t));c+=vec3(.7,.9,1.)*length(g)*.12+vec3(.75,.7,1.)*dot(rib,vec2(.55,.83))*.05*smoothstep(0.,.5,t);float starMask=smoothstep(.42,.82,max(c.r,max(c.g,c.b)));float twinkle=sin(time*.85+floor(v.x*97.)*1.73+floor(v.y*79.)*2.19);c+=vec3(.028,.038,.05)*starMask*twinkle;vec2 nearUV=v*vec2(36.*aspect,36.)+vec2(time*.17,-time*.065);vec2 cell=floor(nearUV);vec2 spot=vec2(hash(cell),hash(cell+19.));float star=pow(max(0.,1.-length(fract(nearUV)-spot)/.065),2.)*step(.985,hash(cell+7.));float pulse=.65+.35*sin(time*1.1+hash(cell)*6.28);c+=vec3(.48,.65,.83)*star*pulse;float breath=1.+.035*sin(time*.21);gl_FragColor=vec4(c*.86*breath,1.);}
+```
+
+### Pause and verification
+
+All three ring layers and all background movement use the same elapsed clock as planet rotation. ON/OFF and the menu's Pause action freeze every continuous effect. Reduced motion renders a completed static scene; controls remain usable. Hidden tabs pause without jumping on return.
+
+Verify the first-frame arc placement, visible progression over subsequent frames, front/back occlusion, mobile composition, pause/resume and absence of shader compilation errors. Keep the offline build self-contained: no video or network dependency is needed. Any preview image must come from this actual implementation, not a separate generative mockup.
