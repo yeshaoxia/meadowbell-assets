@@ -11,7 +11,7 @@
 | [Saffron 复刻初稿](designs/saffron/) | [index.html](designs/saffron/index.html) | [prompt.md](designs/saffron/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/saffron/download.zip) |
 | [SeamSites · Motion](designs/seamsites-motion/) | [index.html](designs/seamsites-motion/index.html) | [prompt.md](designs/seamsites-motion/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites-motion/download.zip) |
 
-[SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互。Saffron 初稿仍保留在原目录，可下载本地查看。
+[SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。Saffron 初稿仍保留在原目录，可下载本地查看。
 
 ## 查看效果
 

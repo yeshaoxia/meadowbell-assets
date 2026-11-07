@@ -8,20 +8,21 @@ Build a polished, full-viewport interactive frontend design showcase named **Sea
 
 ## Exact implementation and assets
 
-- HTML, CSS, WebGL shaders and interaction controller: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/index.html
-- Deterministic six-shape point cloud generator (save as assets/particle-shapes.js): https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/assets/particle-shapes.js
-- Original generated silk/light-field texture: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/assets/silk-field.webp
-- Desktop composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/previews/desktop.png
-- Butterfly composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/previews/butterfly.png
-- Mobile composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/8577490023d50fdda081dd9ae1cc6703bd347377/designs/seamsites-motion/previews/mobile.png
+- HTML, CSS, WebGL shaders and interaction controller: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/index.html
+- Deterministic six-shape point cloud generator (save as assets/particle-shapes.js): https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/assets/particle-shapes.js
+- Original generated silk/light-field texture: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/assets/silk-field.webp
+- Desktop composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/previews/desktop.png
+- Butterfly composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/previews/butterfly.png
+- Ringed planet composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/previews/planet.png
+- Mobile composition reference: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/501d78aa88f44408730d827795c6dad106b2af56/designs/seamsites-motion/previews/mobile.png
 
-The HTML already embeds the texture as a WebP data URI for reliable offline rendering. Retain that embedding. The texture file is also supplied for asset reuse. All links above are pinned to source commit 8577490023d50fdda081dd9ae1cc6703bd347377.
+The HTML already embeds the texture as a WebP data URI for reliable offline rendering. Retain that embedding. The texture file is also supplied for asset reuse. All links above are pinned to source commit 501d78aa88f44408730d827795c6dad106b2af56.
 
 ## Art direction
 
 Use a near-black cinematic canvas with subtly tinted atmosphere. Place the small cream SeamSites. wordmark at top left, a colored status dot and the active chapter plus “/ Frontend design” at the top center, and Pause motion at top right. Add a compact vertical 00–05 chapter selector at the right edge; reveal the selected chapter name, highlight its numeral and dot. Avoid panels and heavy card interfaces.
 
-Center a large luminous particle sculpture in the upper half. Use 16,000 seeded, spatial particles per sculpture, additive soft circular sprites with varying brightness, fine drift, restrained pointer parallax and visible depth. Keep particle sculptures separated from the title below. Build a real branching tree volume with trunk, roots, three-dimensional limbs and foliage; continuously rotate it around its vertical axis at about 0.22 radians per second. Other sculptures gently oscillate to stay recognizable. The butterfly has four distinct lobed wings, slim body, antennae and a gentle independent wing flutter.
+Center a large luminous particle sculpture in the upper half. Use 16,000 seeded, spatial particles per sculpture, additive soft circular sprites with varying brightness, fine drift, restrained pointer parallax and visible depth. Keep particle sculptures separated from the title below. Build a real branching tree volume with trunk, roots, three-dimensional limbs and foliage; continuously rotate it around its vertical axis at about 0.22 radians per second. Other sculptures gently oscillate to stay recognizable. The mature oak uses a curved tapering trunk, buttress roots, successively thinner boughs, and rounded three-dimensional leaf clusters; keep the branch silhouette visible through natural gaps. The butterfly has four distinct lobed wings, slim body, antennae and a gentle independent wing flutter.
 
 Behind the particles, render layered translucent silk-like light ribbons flowing horizontally through the middle and lower canvas. Animate the texture coordinates and brightness continuously with WebGL. On every chapter change, smoothly blend the atmospheric tint and ribbons, add a radial travelling light wave, a brief central flare and a swirl of distortion, and scatter/reassemble the point cloud into the destination form. Use a roughly 1.1-second smoothstep transition; fade and lightly blur the old title into the new title. Rapid clicks should queue the latest destination cleanly.
 
@@ -32,7 +33,7 @@ Behind the particles, render layered translucent silk-like light ribbons flowing
 3. **02 Motion — rose pink — butterfly.** Headline: “Make interaction” / “feel alive.” Description: “Fluid transitions and thoughtful feedback turn everyday actions into memorable experiences.”
 4. **03 Systems — periwinkle/violet — spiral galaxy.** Headline: “One system.” / “Infinite possibilities.” Four spiral arms, an inclined disk and a luminous core.
 5. **04 Flow — emerald/mint — three-dimensional torus knot.** Headline: “Designed to flow.” / “Built to perform.” Description: “Smooth rendering, accessible controls and responsive layouts. Performance is part of the design.”
-6. **05 Launch — warm orange — rocket with fins and exhaust.** Headline: “From first pixel” / “to live.” Description: “From an early idea to a working experience. Design, build, test and launch with SeamSites.” Show an Explore again control returning to the tree.
+6. **05 Horizons — warm orange — ringed planet.** Headline: “New horizons.” / “Built for the web.” Description: “Explore new possibilities through expressive interfaces, spatial design and thoughtful frontend engineering.” The spherical body has fine latitude variation and two separated, inclined particle ring bands. Gently oscillate the whole planet so the rings remain legible. Show an Explore again control returning to the tree.
 
 Use large, light-weight, tightly tracked sans-serif headlines in two lines near the lower third; first line warm cream, second line the chapter accent. Keep supporting text small and muted beneath. Put Share at bottom left and “Design & code by SeamSites” at bottom right. The opening scene includes a discreet scroll-to-explore hint.
 
