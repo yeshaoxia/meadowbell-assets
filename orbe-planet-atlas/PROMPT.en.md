@@ -1,4 +1,4 @@
-# ORBE — Planet Atlas · Production Recreation Brief
+# ORBE — Planet Atlas · Refined Ice & Mineral Edition
 
 Build this exact experience: a one-screen, non-scrolling, full-viewport exoplanet observatory called **ORBE — Planet Atlas**. Preserve the cinematic composition, precise sci-fi HUD, custom geometric lettering and material fidelity of a high-end interactive art direction website. The centerpiece is Aethra, a fictional blue mineral planet with real 3D terrain shading, a thin cyan atmosphere, a small moon and a broad inclined ice-dust ring system.
 
@@ -44,7 +44,7 @@ Both faces: `font-display: block`. Stack: `"Orbe Mono", ui-monospace, monospace`
 
 ### Palette
 
-Ink `#f3f6ff`; active cyan `#5ef3ff`; bezel/background `#030409`; secondary interface text `#a5bdd2`; geological material tint `#d7e8ff`. The environment supplies its own blue and violet tones. Avoid extra saturated colors or oversized glow effects.
+Ink `#f3f6ff`; active cyan `#5ef3ff`; bezel/background `#030409`; secondary interface text `#a5bdd2`; geological material tint `#c3d5ee`. The environment supplies its own blue and violet tones. Avoid extra saturated colors or oversized glow effects.
 
 ## 2. Reference coordinates, responsive units and layers
 
@@ -90,22 +90,24 @@ Use MeshPhysicalMaterial:
 
 - `map`: supplied albedo;
 - `bumpMap`: the linear-data clone;
-- `bumpScale`: **3.8** frame units;
-- `color`: `#d7e8ff`;
-- `roughness`: **0.86**;
-- `metalness`: **0.06**;
-- `clearcoat`: **0.05**;
-- `clearcoatRoughness`: **0.8**;
-- `emissive`: `#273358`;
-- `emissiveIntensity`: **0.035**.
+- `bumpScale`: **0.72** frame units;
+- `color`: `#c3d5ee`;
+- `roughness`: **0.68**;
+- `metalness`: **0.09**;
+- `clearcoat`: **0.20**;
+- `clearcoatRoughness`: **0.55**;
+- `emissive`: `#203352`;
+- `emissiveIntensity`: **0.022**.
+
+After sampling the albedo, compute mineral luminance `dot(diffuseColor.rgb,vec3(.2126,.7152,.0722))`. Mix the sampled color between multipliers(.78,.98,1.16) and(1.10,1.08,1.06), using `smoothstep(.10,.48,mineral)`. This preserves fine texture while making shadowed mineral regions cool and illuminated ice subtly warm.
 
 This material should read as basalt and mineral ice. Avoid polished plastic, molten lava or chrome. Keep crater rims and folded strata visible at normal desktop viewing distance. Never replace the supplied map with a few sine waves or a coarse generated noise texture.
 
 Lighting:
 
-- Hemisphere light: sky `#b4d9ff`, ground `#151329`, intensity **0.20**.
-- Main directional: `#e6f3ff`, intensity **3.1**; normalized sun vector **normalize(−1, 0.48, 0.48)**; place the light at `center + sun × 2000`, targeting the planet center.
-- Rear violet directional: `#6d6bff`, intensity **0.55**, position `(1900, −400, −900)`, targeting the planet center.
+- Hemisphere light: sky `#b4d9ff`, ground `#191529`, intensity **0.24**.
+- Main directional: `#fff0df`, intensity **3.35**; normalized sun vector **normalize(−1, 0.55, 0.65)**; place the light at `center + sun × 2000`, targeting the planet center.
+- Rear violet directional: `#7190ff`, intensity **0.72**, position `(1900, −400, −900)`, targeting the planet center.
 
 Preserve the terminator. Increasing ambient light until every crater is equally visible ruins the spherical form. Do not use a white page-wide bloom pass to hide weak lighting.
 
@@ -119,21 +121,21 @@ Patch the physical material with world position varying `vWorld`. Let `N` be the
 
 `radius = length(hit)`
 
-Only positive travel can shadow the surface. The annulus mask is `smoothstep(540,555,radius) * (1-smoothstep(795,810,radius))`. Modulate the mask with `0.55 + 0.15*sin(radius*0.41) + 0.15*sin(radius*0.93)`. Attenuate outgoing light by `1 - mask * modulation * 0.57`. Apply this before the physical shader's opaque output. Keep coordinates consistent if the whole group is scaled or moved.
+Only positive travel can shadow the surface. The annulus mask is `smoothstep(540,555,radius) * (1-smoothstep(795,810,radius))`. Modulate the mask with `0.55 + 0.15*sin(radius*0.41) + 0.15*sin(radius*0.93)`. Attenuate outgoing light by `1 - mask * modulation * 0.33`. Apply this before the physical shader's opaque output. Keep coordinates consistent if the whole group is scaled or moved: use the live group position as center, pass its uniform scale to both shadow shaders, divide planet-relative distances by that scale before testing the master-frame annulus or sphere radius.
 
 ## 5. Thin atmosphere, not a neon outline
 
-Create a separate sphere of radius `452 × 1.023`, 128 × 80 segments, BackSide, transparent, additive blending and depthWrite false.
+Create a separate sphere of radius `452 × 1.019`, 128 × 80 segments, BackSide, transparent, additive blending and depthWrite false.
 
 Use a custom shader with world normal N and world position P. View direction is `normalize(cameraPosition-P)`. Compute:
 
-`rim = pow(1 - abs(dot(normalize(N), view)), 4.8)`
+`rim = pow(1 - abs(dot(normalize(N), view)), 5.4)`
 
 `lit = smoothstep(-0.38, 0.7, dot(normalize(N), sun))`
 
-`color = mix(vec3(0.16,0.22,0.74), vec3(0.18,0.78,1.0), lit)`
+`color = mix(vec3(0.21,0.24,0.59), vec3(0.32,0.71,1.0), lit)`
 
-`alpha = rim * (0.18 + 0.62*lit)`
+`alpha = rim * (0.12 + 0.58*lit)`
 
 The thin illuminated cyan limb is strongest on the sunward edge. It must not look like a flat CSS box shadow or an opaque thick blue stroke. Keep the dark-side atmosphere restrained.
 
@@ -152,25 +154,27 @@ Create a deterministic 2048 × 1 RGBA radial dust texture. Seed starts at 21003.
 For each radial sample index i:
 
 - `u = i / 2047`;
-- density `v = 0.16 + random()*0.35 + 0.13*sin(i*0.11) + 0.10*sin(i*0.47)`;
-- if `0.32 < u < 0.36` or `0.72 < u < 0.76`, multiply density by 0.035 to create gaps;
-- edge fade `min(1, u*35, (1-u)*35)`;
-- RGB bytes: `(160+random()*50, 183+random()*40, 235)`;
-- alpha byte: `max(0,v)*255*edgeFade`.
+- density base `v = 0.38 + 0.045*sin(i*0.09) + 0.018*sin(i*0.43) + 0.025*sin(u*19)`;
+- softened gaps: `gap = 1 - 0.82*exp(-pow((u-0.41)/0.015,2)) - 0.54*exp(-pow((u-0.73)/0.010,2))`;
+- edge fade `pow(sin(PI*u),0.55)`; fine density multiplier `0.94+0.06*random()`;
+- warmth `warm=exp(-pow((u-0.18)/0.24,2))`; RGB bytes `(180+warm*52, 201+warm*24, 240-warm*20)`;
+- alpha byte: `max(0,v*fine*gap*edgeFade)*255`.
 
 Use linear magnification and linear mipmapped minification. Generate mipmaps. The thin dust lines must not turn into a flickering checkerboard when viewed obliquely.
 
 In the fragment shader derive radial UV from `length(localPosition.xy)`, not the default RingGeometry texture coordinates. Sample at `((radius-540)/270, 0.5)`.
 
-The planet casts a shadow onto the far ring. For ring position P relative to the planet center and sun S, `along = dot(P,S)` and `nearDistance = length(P-S*along)`. Only `along < 0` can be shadowed. Use a softened sphere radius test from `R-9` to `R+9` and reduce brightness by up to 88%.
+The planet casts a shadow onto the far ring. For ring position P relative to the planet center and sun S, `along = dot(P,S)` and `nearDistance = length(P-S*along)`. Only `along < 0` can be shadowed. Use a softened sphere radius test from `R-9` to `R+9` and reduce brightness by up to 76%.
 
-Dust grain multiplier: `0.95 + 0.05*sin(angle*71 + radius*0.12)`. Light multiplier: `0.65 + 0.35*abs(dot(ringNormal,S))`. Final RGB is sampled RGB × light × planetShadow × grain × 1.6. Final alpha is sampled alpha × 0.9. Do not add a solid opaque ellipse behind the ring.
+Dust grain multiplier: `0.985 + 0.015*sin(angle*71 + radius*0.12)`. Light multiplier: `0.65 + 0.35*abs(dot(ringNormal,S))`. Final RGB is sampled RGB × light × planetShadow × grain × 1.65. Final alpha is sampled alpha × 0.72. Do not add a solid opaque ellipse behind the ring.
+
+Add 2,600 tiny depth-tested ice particles on the same ring plane. Use the same seeded random generator; radius `545+pow(random(),0.8)*260`, angle `random()*2*PI`, local z within ±0.6 units. Point sizes 0.5–1.8 pixels. Use a soft circular point shader, pale blue, additive alpha no greater than 0.32 and depthWrite false. Particles should read as fine ice dust, not large stars or glitter confetti.
 
 Add one extremely subtle orbital guide: radius 875, same inclination as the ring, thin `#7cc9e8`, opacity 0.09. It is background notation, not a bright outline.
 
 ## 7. Moon and continuous motion
 
-Moon radius **48**, 64 × 48 segments. Initial local position `(648,292,−240)`. Reuse the geological texture at this smaller scale, tint `#9991b5`, bumpScale 1.8, emissiveIntensity 0.035. It shares the scene's light direction. Do not place an unrelated flat moon sticker above the render.
+Moon radius **48**, 64 × 48 segments. Initial local position `(648,292,−240)`. Reuse the geological texture at this smaller scale, tint `#9991b5`, bumpScale 0.45, emissiveIntensity 0.035. It shares the scene's light direction. Do not place an unrelated flat moon sticker above the render.
 
 Main rotation: **180 seconds per revolution**. Rotate the surface, not the whole layout. Starting yaw 0.72 radians. Maintain delta-time-based motion with dt clamped to 0–0.05 seconds.
 
@@ -203,17 +207,13 @@ Mix toward `color*vec3(1.08,0.98,1.15)+vec3(0.05,0.03,0.09)` inside the trail. A
 
 Disable trail injection on touch layouts, reduced motion and when paused. On webglcontextlost stop that canvas and reveal the unchanged plate.
 
-## 9. Exact display lettering and marquee
+## 9. Complete, static display lettering
 
-Use the supplied PLANET ATLAS SVG as editable inline geometry. Do not approximate it with Arial, a generic sci-fi font or a raster title.
+Use the supplied PLANET ATLAS SVG as editable inline geometry. Preserve its authored glyph paths. Remove the small index-label text from the hero title and render just one complete phrase. The refined edition prioritizes legibility over a continuously cropped marquee.
 
-The glyphs use 189-unit cap height, 30-unit strokes, butt caps and rounded joins. The P has an open lower counter; the A has a tall pointed apex and a high crossbar; the N is a continuous diagonal; the S has engineered rectangular curves. Exact paths and advances are supplied in display-glyphs.json.
+On desktop, place the title at left4%, top11%, width92%, aspect ratio2415/280. Inline SVG viewBox is `-25 95 2415 280`, with xMinYMin preservation. Keep the 189-unit glyph cap height and 30-unit geometric strokes. Disable the track animation and hide the extra repeat copies. The entire phrase must be readable in the initial view.
 
-Place the title container at x 0, top **92u**, height **280u**, width **10000u**. Its SVG viewBox is `0 95 10000 280`, preserving xMinYMin. Glyph cap top is y 122.5. One period is **2415** SVG units, repeated three times. Animate the track from x 0 to x −2415 over **60 seconds**, linear, infinite. Match the repeat distance exactly so the loop does not jump.
-
-Small index text travels with the title: `P_021` at `(210,352)`, `AETHRA` at `(745,280)`, `ORBITAL ARCHIVE` at `(1390,340)`, `G_003` at `(2090,275)`. Size 24 units.
-
-The main planet must render in front of this entire headline layer. White title fragments should disappear behind its silhouette. Never put the title above the planet canvas.
+The planet still occludes the lower central portion of the title. Never put the lettering above the planet canvas. On mobile use left6%, top88px, width88%, the same aspect ratio. The title should remain a complete phrase rather than enormous clipped fragments.
 
 ## 10. HUD bezel and coordinate readout
 
@@ -235,58 +235,55 @@ The motion badge uses a 68 × 22 viewBox: dark rounded rectangle x1 y1 width66 h
 
 Bottom coordinate readout: `X.0052  //  Y.0053`, size21.3h, centered, bottom27h. On pointermove update to actual rounded client coordinates, four-digit zero padded, keeping the last four digits. Coordinates continue to update when animation is paused.
 
-## 11. Interface copy, bottom words and CTA
+## 11. Refined editorial copy and porcelain CTA
 
-Side-copy top is `50%−64u`. Main size21u, line-height31u, letter spacing0.025em. Left x100u; right inset94u, right aligned. `+++` uses letter spacing0.24em and a12u gap below. Secondary lines have size17u, color `#a5bdd2`, margin-top25u.
+Side copy begins at46% viewport height, inset6% from the left/right edges. Main copy uses `clamp(14px,1.22vw,20px)`, line height1.65, tracking0.01em. The cyan `+++` marker is12px with20px separation below it. Secondary information is `clamp(11px,0.8vw,13px)`, line height1.8, tracking0.12em and color#9eb0c7, separated by24px.
 
-Left text, verbatim:
+Left copy, verbatim:
 
 ```
 +++
-BEYOND THE HORIZON
+An ocean of stone.
+A horizon of light.
 
 AETHRA / SECTOR 021
-AN UNCHARTED WORLD
+BEYOND THE KNOWN
 ```
 
-Right text, verbatim:
+Right copy, verbatim:
 
 ```
 +++
-WORLDS IN MOTION
+Born of ice.
+Held by gravity.
 
-ICE / STONE / STARDUST
-ORBITAL ARCHIVE 003
+ONE WORLD. ENDLESS WONDER.
+ORBITAL ARCHIVE / 003
 ```
 
-Bottom left NEW: supplied SVG, width388u, height140u, left66u, bottom115u. Bottom right WORLDS: supplied SVG, width608u, height140u, right64u, bottom115u. Maintain each SVG's aspect ratio.
+NEW and WORLDS retain the supplied geometric SVG paths. Desktop word height118u, bottom116u; NEW width328u, WORLDS width514u. Reduce their prominence so the planet remains the focal point.
 
-Planet identifier: `021 — AETHRA / FICTIONAL EXOPLANET`, centered at bottom254u, font15u, tracking0.18em, color `#a6bfd1`.
+Identifier: `AETHRA · SECTOR 021`, centered at bottom257u, size `clamp(10px,0.72vw,12px)`, tracking0.15em, padding7px14px. Use a quiet translucent dark plate with a complete1px border to keep this small label readable over the rings.
 
-CTA: width360u, height102u, centered horizontally, bottom124u. Label `ENTER ORBIT`; accessible name `Explore planet`. The button is a black chamfered instrument key with one cyan chip, not a generic rounded pill.
+The primary action reads **Explore Aethra**, accessible name `Explore planet`. Its chamfered shape remains precise, but its surface is now pale porcelain #e7f2f5 with dark lettering #09131e. The right chip is deep navy #071824 and its chevrons are ice cyan #b2f6ff. This makes the action easy to find against the dark scene.
 
-Use viewBox `0 0 360 102`:
+Desktop button box410u×102u, minimum236×60px, bottom124u, centered. Keep the authored360×102 SVG body geometry from the reference HTML, centered without stretching. Put the HTML label60u from the button-box left edge, vertically centered, at `clamp(14px,1.05vw,18px)`. The extra label inset compensates for the centered SVG artwork inside the wider box.
 
-- Body: `M22 4H338L356 22V80L338 98H22L4 80V22Z`, fill `#04060c`, matching 7-unit outline.
-- Cyan upper/left edge: `M9 69V24L24 9H338L349 20`, stroke2.2.
-- Thin complete body outline: `#12303a`, width1.
-- Cyan chip: `M278 13H334L348 27V69L334 83H278L264 69V27Z`.
-- Three dark chevrons centered in the chip.
-- HTML label: left42u, vertically centered, size24u.
+Hover raises the button3px with a restrained downward cyan shadow. The chip shifts left3px and chevrons right4px over0.5s on `cubic-bezier(.2,.8,.2,1)`. Press returns to the resting elevation. Keep visible keyboard focus.
 
-Hover: chip translates left5px and scales x1.06 around `(346,51)`; chevrons translate right6px. Duration0.5s, `cubic-bezier(0.2,0.8,0.2,1)`. Focus-visible is a2px cyan outline, offset6px.
+Dialogs use a dark translucent surface,16px radius,40px padding and a subdued complete border. Title54px with tracking−0.04em. Lighting controls use6px radii and clear selected states. On phones use28px dialog padding and42px title.
 
 ## 12. Working interactions
 
-Motion toggle pauses the headline, planet self-rotation, moon motion and glass-trail simulation. Toggle label, aria-pressed and aria-label update together. Resuming continues from stored elapsed time without jumping.
+Motion toggle pauses planet self-rotation, moon motion and glass-trail simulation. Toggle label, aria-pressed and aria-label update together. Resuming continues from stored elapsed time without jumping.
 
 ENTER ORBIT opens an accessible native dialog titled `Aethra.` with the planet description and these concept fields: Classification / Rocky exoplanet; Surface / Basalt / mineral ice; Ring system / Fine ice dust; Archive / Sector 021 / 003. Clearly label the content `FICTIONAL WORLD · CONCEPT PARAMETERS`.
 
-Include two real lighting controls: NATURAL LIGHT and SURVEY LIGHT. Survey mode smoothly raises emissiveIntensity from0.035 toward0.285 and reduces key light from3.1 toward2.4, revealing the shadowed terrain. Buttons expose aria-pressed. Do not attach them to empty event handlers.
+Include two real lighting controls: NATURAL LIGHT and SURVEY LIGHT. Survey mode smoothly raises emissiveIntensity from0.022 toward0.222 and reduces key light from3.35 toward2.65, revealing the shadowed terrain. Buttons expose aria-pressed. Do not attach them to empty event handlers.
 
 MENU opens navigation: Aethra archive, About the atlas, Toggle motion. Archive opens the same planet content. About explains this fictional interactive art study. Toggle motion operates the actual animation state. Dialog supports Escape, close button, outside dismissal and correct focus return.
 
-For deterministic inspection support `?still=1`: start paused at the initial planet orientation and the start of the title track. This is a repeatable browser reference state, not a separate painted mockup.
+For deterministic inspection support `?still=1`: start paused at the initial planet orientation and the complete static title. This is a repeatable browser reference state, not a separate painted mockup.
 
 ## 13. Entrance and loading
 
@@ -301,14 +298,14 @@ If texture or renderer initialization fails, show a readable retry control rathe
 Breakpoint: **820px**.
 
 - HUD uses W/860; omit rails and side bulges.
-- Title: top68px, height126px, width4500px; keep horizontal overflow clipped by its stage.
-- Side copy: top200px; left/right22px; main10px/15px; secondary9px with12px top gap.
-- 3D stage: top120px, bottom70px. Cover-fit the master canvas inside this stage, then scale the group uniformly to0.71; group y−690. Do not nonuniformly scale the canvas contents.
-- NEW: left20px, width120px, height44px, bottom126px.
-- WORLDS: right20px, width168px, height44px, bottom126px.
-- Identifier: bottom204px, size9px.
-- CTA: width232px, height66px, bottom `max(36px, env(safe-area-inset-bottom))`; label15px, left26px.
-- Top controls use10px text. Brand12px. Coordinates9px.
+- Title: left6%, top88px, width88%, aspect ratio2415/280. Show the complete title.
+- Side copy: top174px, left/right22px; main12px with1.6 line height, secondary10px with14px top gap. Marker11px with12px gap. Below720px viewport height, move copy to160px and hide its secondary metadata.
+- 3D stage: top160px, bottom100px. Cover-fit the master canvas inside this stage, then scale the group uniformly to0.71; group y−690. Do not nonuniformly scale the canvas contents.
+- NEW: left20px, width110px, height40px, bottom126px.
+- WORLDS: right20px, width164px, height40px, bottom126px.
+- Identifier: bottom197px, size10px, padding6px10px. In short viewports use bottom190px.
+- CTA: width248px, height62px, bottom38px; label14px, left36px.
+- Top controls use11px text. Brand12px. Coordinates10px.
 - No pointer-trail injection on touch layouts. No horizontal page scrolling at375px.
 
 Reduced motion: no marquee, no continuous rotation, no pointer parallax or trail injection, no entrance movement. Show the completed static scene. The motion toggle's initial state reflects reduced-motion preference. Coordinates and dialog interactions remain available.
