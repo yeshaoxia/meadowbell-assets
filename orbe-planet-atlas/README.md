@@ -16,7 +16,7 @@ Extract the ZIP, then double-click `index.html` in a modern browser. No server, 
 - `PROMPT.en.md`: full English production recreation brief with real immutable asset URLs.
 - `assets/`: original generated PNGs, optimized WebP copies and authored editable SVG lettering.
 - `ASSET-PROMPT.en.md`: the complete generation prompt for the new cyan-violet nebula background.
-- This edition does not include a screenshot: browser capture was unavailable, so previews from the previous edition were excluded.
+- `desktop-preview.jpg`, `mobile-preview.jpg`, `menu-preview.jpg`: actual browser captures from the living-orbit build.
 - `asset-manifest.json`: file hashes and actual sizes.
 
 The PNG originals were generated with the built-in image-generation tool. WebP copies retain the original pixel dimensions. They are 1774 × 887 for the surface atlas and 1536 × 1024 for the environment, not 4K assets. Runtime embeds the official Three.js r160 classic build, originally obtained from jsDelivr. Its MIT license is included in assets/THREE-LICENSE.txt. Fonts are Share Tech Mono and Share Tech from Google Fonts, embedded in the HTML.
@@ -31,4 +31,8 @@ The primary action is 226 × 56 px on desktop and 220 × 54 px on mobile. The me
 
 The new cyan-violet environment asset is pinned to GitHub commit 7d22ef71c2bdb3f34b3e898e37799187b437f836. The original geology remains in its original asset commit.
 
-Verification: the running page was checked through its DOM and interactions at desktop and mobile sizes. No browser-rendered screenshot is claimed for this edition. The browser tool does not allow file:// navigation, so direct double-click behavior could not be exercised in that tool; the portable HTML embeds all runtime resources and uses no module imports or external image requests.
+Verification: the running page was checked through its DOM and interactions at desktop and mobile sizes. Browser capture was available for the living-orbit edition; the ZIP includes fresh desktop, phone and menu captures. The browser tool does not allow file:// navigation, so direct double-click behavior could not be exercised in that tool; the portable HTML embeds all runtime resources and uses no module imports or external image requests.
+
+## Living orbit edition
+
+The ring particles now orbit with radius-dependent speed and subtle shimmer. The dust bands carry a faint traveling light pattern. The nebula drifts slowly, with restrained starlight twinkle and brightness breathing. All effects share the existing pause state and respect reduced motion.

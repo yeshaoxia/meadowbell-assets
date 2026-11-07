@@ -286,7 +286,7 @@ Include two real lighting controls: NATURAL LIGHT and SURVEY LIGHT. Survey mode 
 
 MENU opens a native dialog styled as a compact right-side navigation sheet. Desktop box:400px wide, height `min(640px,calc(100dvh - 40px))`, top20px, right20px, margin0, padding32px and16px radius. Use a complete1px cool border, deep translucent#08131df5 surface and a neutral downward shadow. Do not make it an oversized central alert. Backdrop is#02070db3 with10px blur.
 
-Its caption is `ORBE / PLANET ATLAS`. Heading: `Your next discovery.`, font32px, normal weight, line height1.25, max-width260px. Keep a36×36px close control at top/right18px with8px radius and an authored cross icon.
+Its caption is `ORBE / PLANET ATLAS`. Heading: `Your next discovery.`, font32px, normal weight, line height1.25, max-width260px. Keep a36×36px close control at top/right18px with8px radius and an authored cross icon. Give this positioned close control z-index2 so the content/caption cannot intercept its clicks.
 
 Three navigation rows:
 
@@ -350,3 +350,19 @@ Deliver the runnable HTML, the exact asset list, the English recreation brief, d
 The final package is an extracted-folder deliverable with a fully self-contained index.html. Its Three.js library, WebP texture bytes and WOFF2 font bytes are embedded. It has no remote runtime imports, no remote script/image src and no local texture requests. Keep the editable assets, full prompt and library license alongside it. A static HTTP preview may be used for browser interaction checks, but do not describe that as proof of file-protocol behavior. If the browser tool disallows file URLs, disclose that verification limit.
 
 For this edition, verify desktop1440×960, mobile375×812 and a short mobile viewport. Confirm the primary action dimensions, menu dimensions, complete click targets, lighting selection, Escape dismissal, expanded-state reset, zero horizontal overflow and no runtime errors. If screenshot capture fails, report it; do not fabricate a replacement screenshot.
+
+## 17. Animated ice rings and a living deep-space environment
+
+Add restrained continuous motion to both the rings and the background without changing the established composition or control sizes. Use one shared scene clock; it advances only while motion is enabled, reduced motion is false and the document is visible. Clamp elapsed frame time to0–0.05s. Pause and resume from the stored elapsed time rather than from wall-clock time, so resuming does not jump.
+
+**Ice-dust orbit:** give the ring-particle ShaderMaterial a shared `uTime` uniform. In its vertex shader, derive local radius `r=length(position.xy)` and rotation angle `a=uTime*0.018*pow(600/max(r,1),1.5)`. Rotate the initial local x/y by this angle before model-view projection; keep z unchanged. Particles nearer the planet move a little faster. Retain the ring-plane transform, depth testing and planet occlusion. Do not rotate the whole hero, swing the ring plane or rebuild particle buffers every frame.
+
+**Particle shimmer:** pass `shimmer=0.72+0.28*sin(uTime*0.72+position.x*0.051+position.y*0.037)` to the particle fragment shader. Multiply the existing soft circular alpha by this value. Keep point sizes and the pale icy color unchanged. This should read as small mineral glints, not fast flashing lights.
+
+**Ring-band flow:** give the annulus material the same shared time uniform. Let `angle=atan(localPosition.y,localPosition.x)`. Replace the static grain multiplier with `0.92+0.06*sin(angle*12-uTime*0.18+radius*0.06)+0.02*sin(angle*47+uTime*0.11+radius*0.12)`. Preserve the radial texture, soft gaps, reciprocal shadows and all the existing depth behavior. This creates a low-contrast traveling dust pattern without changing the silhouette.
+
+**Nebula drift:** in background texture sampling, apply a permanent1.8% inset zoom to keep the edges covered. Let `drift=vec2(sin(time*0.045)*0.0035,(cos(time*0.036)-1)*0.0025)` and sample at `0.5+(uv-0.5)*0.982+drift`, then clamp. Keep existing glass-trail refraction on top of this sampling motion. Do not move the page's typography, header controls or HUD.
+
+**Starlight and breathing:** derive a star mask from the source image brightness with `smoothstep(0.42,0.82,max(color.r,max(color.g,color.b)))`. Use a spatially varied sine `sin(time*0.65+floor(uv.x*97)*1.73+floor(uv.y*79)*2.19)` to add at most(0.018,0.024,0.03) times the star mask. Multiply the background brightness by `1+0.018*sin(time*0.14)`. Preserve the82% background exposure. Only existing bright star pixels should shimmer; do not add a screen-wide flicker or unrelated particle rain.
+
+All of these effects must stop with the existing motion toggle, with the menu's Pause action and under reduced-motion preference. Pause motion in hidden tabs. The interface and archive lighting controls remain usable when the visual scene is paused. The fully embedded offline build must retain these shaders and require no video, network requests or extra files to animate.
