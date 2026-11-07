@@ -7,11 +7,11 @@
 | [Meadowbell](designs/meadowbell/) | [index.html](designs/meadowbell/index.html) | [prompt.md](designs/meadowbell/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/meadowbell/download.zip) |
 | [Lumora](designs/lumora/) | [index.html](designs/lumora/index.html) | [prompt.md](designs/lumora/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/lumora/download.zip) |
 | [ORBE — Planet Atlas](designs/orbe-planet-atlas/) | [index.html](designs/orbe-planet-atlas/index.html) | [prompt.md](designs/orbe-planet-atlas/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/download.zip) |
-| [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) |
-
+| [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) | 
 | [Saffron 复刻初稿](designs/saffron/) | [index.html](designs/saffron/index.html) | [prompt.md](designs/saffron/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/saffron/download.zip) |
+| [SeamSites · Motion](designs/seamsites-motion/) | [index.html](designs/seamsites-motion/index.html) | [prompt.md](designs/seamsites-motion/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites-motion/download.zip) |
 
-Saffron [在线初稿演示](https://saffron-webgl-recreation.vercel.app)，并非原视频的像素级一致复现。
+[SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互。Saffron 初稿仍保留在原目录，可下载本地查看。
 
 ## 查看效果
 
