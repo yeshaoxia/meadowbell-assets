@@ -4,20 +4,17 @@
 
 | 项目 | 代码 | 提示词 | 完整下载 |
 | --- | --- | --- | --- |
-| [Meadowbell](designs/meadowbell/) | [index.html](designs/meadowbell/index.html) | [prompt.md](designs/meadowbell/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/meadowbell/download.zip) |
-| [Lumora](designs/lumora/) | [index.html](designs/lumora/index.html) | [prompt.md](designs/lumora/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/lumora/download.zip) |
 | [ORBE — Planet Atlas](designs/orbe-planet-atlas/) | [index.html](designs/orbe-planet-atlas/index.html) | [prompt.md](designs/orbe-planet-atlas/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/orbe-planet-atlas/download.zip) |
 | [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) | 
-| [Saffron 复刻初稿](designs/saffron/) | [index.html](designs/saffron/index.html) | [prompt.md](designs/saffron/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/saffron/download.zip) |
 | [SeamSites · Motion](designs/seamsites-motion/) | [index.html](designs/seamsites-motion/index.html) | [prompt.md](designs/seamsites-motion/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites-motion/download.zip) |
 
-[SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。Saffron 初稿仍保留在原目录，可下载本地查看。
+[SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。
 
 ## 查看效果
 
 下载任一项目 ZIP，完整解压，打开 index.html。也可以下载整个仓库，在本地打开根目录 index.html，统一进入全部演示。
 
-ORBE 与 SeamSites 为完整交互设计。Meadowbell、Lumora 原来只有素材，本次提供的是清楚标注的素材预览页，不冒充原始设计。
+当前保留 ORBE、SeamSites 四季森林、SeamSites Motion 三个交互设计项目。
 
 ## 链接稳定性
 
@@ -31,9 +28,6 @@ ORBE 与 SeamSites 为完整交互设计。Meadowbell、Lumora 原来只有素�
 
 | 项目 | MP4 预览 | 时长 | 体积 |
 | --- | --- | --- | --- |
-| meadowbell | [视频](designs/meadowbell/assets/demo-mini.mp4) | 5.1 秒 | 约 75 KB |
-| lumora | [视频](designs/lumora/assets/demo-mini.mp4) | 5.1 秒 | 约 18 KB |
 | orbe-planet-atlas | [视频](designs/orbe-planet-atlas/assets/demo-mini.mp4) | 5.9 秒 | 约 28 KB |
 | seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 5.6 秒 | 约 68 KB |
-| saffron | [视频](designs/saffron/assets/demo-mini.mp4) | 5.8 秒 | 约 50 KB |
 | seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 6.0 秒 | 约 111 KB |
