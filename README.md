@@ -9,13 +9,15 @@
 | [SeamSites · Motion](designs/seamsites-motion/) | [index.html](designs/seamsites-motion/index.html) | [prompt.md](designs/seamsites-motion/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites-motion/download.zip) |
 | [CRAFTLINE · Ink Reveal](designs/ink-reveal/) | [index.html](designs/ink-reveal/index.html) | [prompt.md](designs/ink-reveal/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/ink-reveal/download.zip) |
 
+| [SeamSites · Angel / Devil](designs/angel-devil/) | [index.html](designs/angel-devil/index.html) | [prompt.md](designs/angel-devil/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/angel-devil/download.zip) |
+
 [SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。
 
 ## 查看效果
 
 下载任一项目 ZIP，完整解压，打开 index.html。也可以下载整个仓库，在本地打开根目录 index.html，统一进入全部演示。
 
-当前收录 ORBE、SeamSites 四季森林、SeamSites Motion、CRAFTLINE Ink Reveal 四个交互设计项目。
+当前收录 ORBE、SeamSites 四季森林、SeamSites Motion、CRAFTLINE Ink Reveal、Angel / Devil 五个交互设计项目。
 
 ## 链接稳定性
 
@@ -33,5 +35,8 @@
 | seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 5.6 秒 | 约 68 KB |
 | ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 6.0 秒 | 约 49 KB |
 | seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 6.0 秒 | 约 111 KB |
+| angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 5.94 秒 | 约 64 KB |
 
 [CRAFTLINE Ink Reveal 在线演示](https://craftline-ink-reveal.vercel.app/) · [6 秒轻量视频](designs/ink-reveal/assets/demo-mini.mp4)
+
+[Angel / Devil 在线演示](https://seamsites-angel-devil.vercel.app/) · [鼠标局部显影](designs/angel-devil/)
