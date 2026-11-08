@@ -8,7 +8,6 @@
 | [SeamSites](designs/seamsites/) | [index.html](designs/seamsites/index.html) | [prompt.md](designs/seamsites/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites/download.zip) | 
 | [SeamSites · Motion](designs/seamsites-motion/) | [index.html](designs/seamsites-motion/index.html) | [prompt.md](designs/seamsites-motion/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/seamsites-motion/download.zip) |
 | [CRAFTLINE · Ink Reveal](designs/ink-reveal/) | [index.html](designs/ink-reveal/index.html) | [prompt.md](designs/ink-reveal/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/ink-reveal/download.zip) |
-
 | [SeamSites · Angel / Devil](designs/angel-devil/) | [index.html](designs/angel-devil/index.html) | [prompt.md](designs/angel-devil/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/angel-devil/download.zip) |
 
 [SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。
