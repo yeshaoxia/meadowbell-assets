@@ -4,7 +4,7 @@
 
 ## 查看
 
-- 在线演示：https://seamsites-heroic-universe.headybell1.chatgpt.site （Sites 私有演示，需拥有者账户访问）
+- 在线演示：https://seamsites-heroic-universe.vercel.app/
 - 解压下载包后，直接打开 index.html；已附带图片数据兼容本地文件打开。
 - 也可在目录内运行 `python -m http.server 8080`，访问 http://localhost:8080。
 - 页面预览视频：assets/demo-mini.mp4，6 秒，640×360，24fps，约 104 KB，无音轨。

@@ -46,6 +46,6 @@
 Angel / Devil V2：珠光暗金导航、玫瑰云境与珍珠拱廊，天使羽尘圣光和恶魔局部余烬。
 
 
-[Heroic Universe 在线演示](https://seamsites-heroic-universe.headybell1.chatgpt.site)（Sites 私有演示，需拥有者账户访问） · [项目文件](designs/heroic-universe/) · [英文提示词](designs/heroic-universe/prompt.md)
+[Heroic Universe 在线演示](https://seamsites-heroic-universe.vercel.app/) · [项目文件](designs/heroic-universe/) · [英文提示词](designs/heroic-universe/prompt.md)
 
 Heroic Universe：原创机械骑士与星际游侠，局部人物呼吸、能量灯、红雾余烬、三种人物视图、可访问弹窗与沉浸观赏模式。
