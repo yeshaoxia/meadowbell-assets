@@ -36,7 +36,7 @@
 | seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 221 KB |
 | ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 约 6 秒 · 640×472 · 24 fps | 约 109 KB |
 | seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 217 KB |
-| heroic-universe | [视频](designs/heroic-universe/assets/demo-mini.mp4) | 6 秒 · 640×360 · 24 fps | 约 168 KB |
+| heroic-universe | [视频](designs/heroic-universe/assets/demo-mini.mp4) | 6 秒 · 640×360 · 24 fps | 约 114 KB |
 | angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 6 秒 · 640×472 · 24 fps | 约 206 KB |
 
 [CRAFTLINE Ink Reveal 在线演示](https://craftline-ink-reveal.vercel.app/) · [6 秒轻量视频](designs/ink-reveal/assets/demo-mini.mp4)
@@ -48,4 +48,4 @@ Angel / Devil V2：珠光暗金导航、玫瑰云境与珍珠拱廊，天使羽�
 
 [Heroic Universe 在线演示](https://seamsites-heroic-universe.vercel.app/) · [项目文件](designs/heroic-universe/) · [英文提示词](designs/heroic-universe/prompt.md)
 
-Heroic Universe Motion II：独立人物层与关节动作，游侠转头抬腕、骑士抬臂蓄能、披风摆动、双层交互烟雾、点击光环、斜向切换光幕和全屏轨道菜单。人物档案、故事和宇宙介绍分别采用侧栏、底部时间线与编辑式面板。
+Heroic Universe Motion III：撤掉关节拉伸、原画扭曲和镜头跟随，固定人物轮廓；使用原生光标与低强度、按帧平滑的光照和烟雾互动。保留轨道菜单、档案侧栏与故事时间线。
