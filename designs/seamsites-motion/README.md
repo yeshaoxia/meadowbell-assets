@@ -10,3 +10,7 @@
 
 文件：index.html / assets/particle-shapes.js / assets/silk-field.webp / prompt.md / previews/。
 这是根据新需求创作的 SeamSites 前端设计版本，保留 Saffron 参考的暗色流光气质；不声明与原视频像素级相同。
+
+## 网页预览视频
+
+[下载 6 秒轻量 MP4](assets/demo-mini.mp4)：480×270、15 fps、无音轨，111,076 字节（约 111 KB）。包含全部六段动态，适合网页卡片静音循环预览。
