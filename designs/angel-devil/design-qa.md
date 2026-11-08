@@ -1,40 +1,33 @@
-# Angel / Devil — visual and interaction QA
+# SeamSites Angel / Devil — V2 review
 
 final result: passed
 
-## Visual truth and evidence
+## Source and matched evidence
 
-Source: `../reference-start.png`, extracted from the user-supplied Pink Rider MP4 (1920 × 1416). Full video contact sheet: `../contact.jpg`.
+Source baseline: `before.png`, the actual V1 portable page captured at 1280 × 944 CSS pixels / physical pixels, DPR 1. Implementation: `desktop.png` and `reveal.png`, captured from V2 at the same 1280 × 944 CSS/pixel viewport, DPR 1. The user requested new menu styling, a new photographic background, and distinct angel/devil effects; these are intentional redesign surfaces, not reference-fidelity defects. The full combined before/after comparison `comparison.jpg` and focused `comparison-header.jpg` were opened and reviewed. Mobile: `mobile.png`, actual browser capture at 390 × 844 CSS/pixel dimensions. No density normalization was necessary.
 
-Implementation: `../qa/desktop.png`, `../qa/reveal.png`, each 1920 × 1416 physical pixels at a 1920 × 1416 CSS viewport, DPR 1. Mobile capture: `../qa/mobile.png`, 390 × 844 CSS/pixel dimensions. No image-density rescaling before comparison. Full combined comparison: `../qa/comparison-full.jpg`; focused comparisons: `../qa/comparison-header.jpg` and `../qa/comparison-type.jpg`. Both source and actual browser screenshots were opened together in those comparison inputs.
+## Required surfaces
 
-Rest-state comparison uses the opening reference frame; reveal comparison is behavioral, not pixel-identical: the original character and pink riding outfit are intentionally replaced by a newly generated angel/devil pair. The first source frame includes a tiny residual shoulder reveal. Marquee phase and pointer trajectory are time-dependent.
+- Typography: retains neutral Arial marquees and SeamSites wordmark; new small numbered navigation uses 16 px desktop text, warm-metal indices, and clear spacing. Dialog titles and edition pill use Georgia for a more editorial finish. No new font requests or external runtime dependencies.
+- Layout: centered portrait, shared image rectangle, two background type rows and primary navigation all retained. Navigation is now one pearl-glass capsule, with a deep plum CTA and ivory circular arrow. Mobile keeps a compact menu plus CTA, with no header collisions at 390 px. Footer pills remain legible over the character.
+- Color: new warm ivory, aged gold, rose clouds, pearl architecture and plum. Marquees are deliberately softened so they do not overpower the environment. CTA contrast and focus indicators remain clear. Dialog surfaces match the navigation palette.
+- Image quality: generated photographic 1448 × 1086 pearl-arch/cloud background; generated transparent 512 × 512 feather sprite. Real assets, no CSS approximation of the architecture or feather. Original aligned angel/devil portraits unchanged. Landscape uses centered composition; mobile deliberately shifts crop toward one arch instead of stretching the image. Background moves subtly through real image transforms.
+- Copy: existing portfolio content retained. Main CTA is now “Let’s create”; edition label is “The Duality Study · 01”. Modal navigation and local contact-brief behavior are unchanged.
 
-## Required fidelity surfaces
+## Motion and regression checks
 
-- Typography: Arial/Helvetica matches the source's neutral grotesk direction. Oversized uppercase horizontal rows retain the source hierarchy and density; top row is muted, second is black. Fixed an initially excessive second-row weight and moved both rows up 20 CSS pixels. New thematic copy and different word widths are intentional. Rolling phase is not used as a pixel-fidelity claim.
-- Spacing/layout: header at roughly 45 px from top/edges; large centered, bottom-cropped portrait; typography at the same middle-page band; two footer controls. Angel wings intentionally broaden the silhouette. Halo and horns require more headroom than the original girl's hair. Same shared 3:4 image rectangle is used for both identities.
-- Colors/tokens: pale pink `#fae9f1`, pink accent `#f77eae`, near-black `#171416`, muted gray-pink `#cbbbc3`. The source has a subtle vertical pink variation; this recreation uses a stable pale pink for clean transparent-image integration (P3 acceptable difference).
-- Imagery: two detailed 1086 × 1448 alpha portraits. Feather, skin, pearls, metallic filigree, garnet and horn details inspected at full resolution. Devil derived from the exact angel image; facial landmarks and clothing seams remain closely aligned. No fake illustration, placeholder or SVG character art. Icons are the official Heroicons library. Full-color WebP quality 91 preserves alpha and local texture.
-- Copy/content: coherent duality/creative portfolio theme; SeamSites branding carried from the user's established project family. Newly completed menus are independent creative content, not unseen original-video claims. Local-only brief download is explained before and after submission.
+Angel: warm halo bloom, gold-white motes, occasional narrow glints, and drifting/rotating true-alpha feathers. Devil: restrained warm burgundy illumination within the revealed image and orange-red emissive embers rising from recently revealed opaque character pixels. Ember emission persists briefly along the trail, not only at the final cursor position. The two looks remain visually distinct without covering facial features.
 
-## Findings and iteration history
+The portrait replacement still uses the same source rectangle and contracting alpha mask. Horn/halo replacement, face/bodice registration, pointer drag, restoration and automatic demonstration remain functional. Atmosphere uses its own low-resolution canvas, capped at 960 px wide and about 30 frames/sec; portrait compositing keeps its existing on-demand loop. Reduced motion disables environmental drift and time-varying ambient motion; manually requested reveal remains usable.
 
-1. [P2, fixed] Original fading alpha mask made dark materials appear gray/ghosted. Replaced with full-opacity brush circles whose radius contracts smoothly over 1.75 seconds. Re-captured reveal confirms clear burgundy metal and dark hair.
-2. [P2, fixed] Dragging selected the background marquee. Disabled user selection on the interactive stage; re-captured drag shows no blue selection band.
-3. [P2, fixed] Overlay-only compositing left the angel halo visible behind a revealed horn. The renderer now removes the angel within the mask and inserts the registered devil, including alpha; additive premultiplied composition avoids a bright seam. Post-fix reveal capture shows the corresponding halo segment removed.
-4. [P2, fixed] Mobile footer instruction lost contrast over pale couture. Added a restrained pale pill, shorter touch-specific wording, and a full mobile menu. Post-fix 390 × 844 capture shows legible footer controls and accessible sections.
-5. [P2, fixed] Initial black marquee weight drifted too far from the reference. Adjusted optical weight and vertical position; focused type comparison inspected again.
+Opened the updated Atelier dialog and inspected both portraits. Checked Escape return, mobile menu access, and the new contact CTA reaching the labeled local-brief form. Portable IIFE page loaded the redesigned menu and background with local embedded assets. Vite production build and all four template checks passed. Current page browser error logs checked; no runtime errors in final tested states.
 
-No actionable P0/P1/P2 findings remain.
+## Iterations
 
-## Browser verification
+- P2 fixed: initial ember emission ended immediately when a quick drag left the character. Emission now samples a capped history of opaque character hits for 850 ms, so the trail emits coherently as it restores.
+- P2 fixed: initial mobile center crop hid both architectural edges. Shifted the mobile background to 18% horizontal position to show one side of the setting without distortion. Updated mobile capture inspected.
+- No outstanding P0/P1/P2 findings. The new background, menu geometry and reduced marquee opacity are user-requested design changes.
 
-Verified in the user's in-app browser against the running React/Vite app and the portable IIFE build. Desktop pointer drag across horns/face/bodice produces a solid local reveal and restores the angel after contraction. Mobile drag verified at 390 × 844. Opened Atelier and viewed both complete portraits. Opened Visions, entered automatic demonstration, then stopped/cleared with Escape. Mobile menu reaches Journal and returns correctly. Native modal keyboard focus stays within dialogs; Escape dismisses and returns to the originating control. Contact form filled with test data and saved a project brief, reaching the explicit success state. Browser error log: no errors in tested states. Production build and four template hosting checks passed.
+## P3 / limits
 
-## Follow-up polish / limitations
-
-- P3: source font was unavailable, so the system grotesk is a close optical match, not an extracted original font.
-- P3: feather contours and some hair strands differ between the two generated identities, appropriately localized by the mask. Identical canvas geometry prevents crop or position jumps; it does not imply every feather is mathematically identical.
-- No reference mobile/menu views were supplied; those are deliberate responsive completions.
-- Artwork is photographic raster imagery, not an independently rigged 3D model. Cursor reveal, marquee and automatic demonstration are live animation.
+Environment is a photographic plate with slow pan, scale and lighting, not a newly simulated 3D world. Feathers and glints are intentionally delicate; the stronger red effects occur locally during revelation. Exact particle positions and marquee phase vary with time and pointer motion.

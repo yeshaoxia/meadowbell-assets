@@ -1,6 +1,6 @@
 # SeamSites — Angel / Devil
 
-A pink editorial portfolio with a registered angel-to-devil cursor reveal. Recreated from the supplied Pink Rider video, with original angel/devil fashion imagery and SeamSites branding.
+A pearl-and-dark-gold celestial portfolio with a registered angel-to-devil cursor reveal. V2 redesign adds photographic rose-cloud architecture, refined glass navigation, floating feather motes, halo light and trail-driven devil embers. Recreated from the supplied Pink Rider video, with original angel/devil fashion imagery and SeamSites branding.
 
 - [Live interactive demo](https://seamsites-angel-devil.vercel.app/)
 - [English recreation prompt](prompt.md)
@@ -15,6 +15,10 @@ Download and extract the complete ZIP, then open `index.html`. No installation, 
 Move across the face, wings or couture to reveal the devil. The trail smoothly contracts over about 1.75 seconds and returns to the angel. On mobile, drag over the portrait. Click the bottom-left hint or press Space for automatic demonstration; Escape stops and clears it. Add `?demo=1` to start in demo mode. The Atelier panel displays both portraits in full.
 
 Visions, Atelier and Journal open working dialogs. A compact mobile menu keeps every section accessible. The contact form validates input and downloads a local project brief. It does not send email or store information.
+
+## V2 atmosphere
+
+A generated pearlescent arch-and-cloud environment drifts slowly behind the portrait. The angel uses warm halo light, gold-white glints and real feather sprites. The devil reveal uses a restrained burgundy light treatment and emissive embers originating from the opaque revealed silhouette. Effects respect reduced-motion preferences; the full-width effect canvas caps its render width at 960 pixels and runs at about 30 fps. The underlying character pair and local reveal remain registered.
 
 ## Files
 
