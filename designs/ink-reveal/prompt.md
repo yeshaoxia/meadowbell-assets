@@ -22,7 +22,7 @@ Readable implementation references:
 - Desktop idle state: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/9d240200c91c3dea9b3e4868aecc327fa57bfc23/designs/ink-reveal/previews/rest.png
 - Desktop reveal state: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/9d240200c91c3dea9b3e4868aecc327fa57bfc23/designs/ink-reveal/previews/hover.png
 - Phone layout: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/9d240200c91c3dea9b3e4868aecc327fa57bfc23/designs/ink-reveal/previews/mobile.png
-- Compact actual interaction video: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/9d240200c91c3dea9b3e4868aecc327fa57bfc23/designs/ink-reveal/assets/demo-mini.mp4
+- Compact actual interaction video: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/66eb10bc8d84a3d39f09d82b2ebbb54b5aaf5e51/designs/ink-reveal/assets/demo-mini.mp4
 
 All owned links are pinned to commit 9d240200c91c3dea9b3e4868aecc327fa57bfc23; do not replace them with moving main-branch links.
 
@@ -53,3 +53,10 @@ Main returns to the canvas and clears the stroke. Story opens a compact monochro
 Provide a self-contained static entry point that works after ZIP extraction, original web assets, readable motion/interface sources, README, this prompt, actual browser screenshots and a compact six-second muted MP4 preview. Retain the inline texture data so local file opening has no external image request requirement. No backend, paid service, secret, external runtime CDN or production email integration is needed.
 
 The original source website and original ink texture were not supplied. This version recreates the visible layout and interaction using a source-derived wordmark and a regenerated pigment material. Individual fluid shapes and pigment folds will not match every video frame; do not claim original-source or pixel-identical reproduction.
+
+
+## Lightweight preview standard
+
+Actual working-page preview: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/66eb10bc8d84a3d39f09d82b2ebbb54b5aaf5e51/designs/ink-reveal/assets/demo-mini.mp4
+
+Keep the preview about six seconds, 640×472, 24 fps, muted H.264 with fast-start; this verified export is 109,000 bytes (about 109 KB). Capture continuous live-rendered frames or use an existing continuous high-quality source; do not merely increase the declared frame rate of a stuttering capture. Preserve the original aspect ratio. Reuse this immutable video link when referencing the actual project preview. The extracted offline ZIP includes the same MP4 locally.

@@ -42,3 +42,10 @@ Use large, light-weight, tightly tracked sans-serif headlines in two lines near 
 Support clicking all six chapter controls, mouse wheel navigation, up/down arrow keys, Home to return to the tree, touch swipes, space to pause/resume, and the visible pause toggle. Respect prefers-reduced-motion on initial load. Keep aria labels, pressed state and keyboard focus visible. Make layout responsive at desktop and 390px phone width without cutting off headlines, navigation or the sculpture. Cap device pixel ratio at 1.5 for rendering cost. Use plain HTML/CSS/JavaScript with WebGL 2 and no external runtime dependency. Deliver index.html, assets/particle-shapes.js, assets/silk-field.webp, a README, this prompt and a complete ZIP that works after extraction.
 
 Reuse the reference implementation when identical output is required. This is the customized SeamSites frontend concept; it is not a pixel-perfect reconstruction claim for the original Saffron video.
+
+
+## Lightweight preview standard
+
+Actual working-page preview: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/66eb10bc8d84a3d39f09d82b2ebbb54b5aaf5e51/designs/seamsites-motion/assets/demo-mini.mp4
+
+Keep the preview about six seconds, 640×360, 24 fps, muted H.264 with fast-start; this verified export is 216,878 bytes (about 217 KB). Capture continuous live-rendered frames or use an existing continuous high-quality source; do not merely increase the declared frame rate of a stuttering capture. Preserve the original aspect ratio. Reuse this immutable video link when referencing the actual project preview. The extracted offline ZIP includes the same MP4 locally.

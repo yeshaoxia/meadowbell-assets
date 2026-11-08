@@ -23,3 +23,9 @@ Main、Story、Enquire、Start a project 和 Browse 均可交互。原视频没�
 - previews/：实际浏览器截图。
 
 完整开发项目使用 React + Vite。可读源文件修改后需重新打包；若仅替换文案和布局，参考 interface.source.jsx 与 app.css。复现同样效果时，请直接使用本目录的原代码与素材，单靠文字提示词不能保证跨平台完全一致。
+
+## 网页预览视频
+
+[播放 / 下载轻量 MP4](assets/demo-mini.mp4) · 约 6 秒 · 640×472 · 24 fps · 约 109 KB · 无音轨。
+
+H.264、fast-start，适合网页卡片静音循环播放。采用连续动态录制 / 高质量原始录制压缩，已验证实际网页播放和逐帧连续性。完整下载包包含同一新版视频。

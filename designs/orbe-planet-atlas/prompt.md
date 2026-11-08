@@ -400,3 +400,10 @@ Verify the first-frame arc placement, visible progression over subsequent frames
 Reference HTML: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/d3ac2df4b5d9d18c002268966b00c507b20ef029/designs/orbe-planet-atlas/index.html
 
 All repository image and implementation URLs above use the immutable commit `d3ac2df4b5d9d18c002268966b00c507b20ef029`. Download the ZIP for local assets and offline use. Keeping the repository public and retaining its history is still required for online links.
+
+
+## Lightweight preview standard
+
+Actual working-page preview: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/66eb10bc8d84a3d39f09d82b2ebbb54b5aaf5e51/designs/orbe-planet-atlas/assets/demo-mini.mp4
+
+Keep the preview about six seconds, 640×360, 24 fps, muted H.264 with fast-start; this verified export is 128,688 bytes (about 129 KB). Capture continuous live-rendered frames or use an existing continuous high-quality source; do not merely increase the declared frame rate of a stuttering capture. Preserve the original aspect ratio. Reuse this immutable video link when referencing the actual project preview. The extracted offline ZIP includes the same MP4 locally.

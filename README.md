@@ -30,10 +30,10 @@
 
 | 项目 | MP4 预览 | 时长 | 体积 |
 | --- | --- | --- | --- |
-| orbe-planet-atlas | [视频](designs/orbe-planet-atlas/assets/demo-mini.mp4) | 5.9 秒 | 约 28 KB |
-| seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 5.6 秒 | 约 68 KB |
-| ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 6.0 秒 | 约 49 KB |
-| seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 6.0 秒 | 约 111 KB |
+| orbe-planet-atlas | [视频](designs/orbe-planet-atlas/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 129 KB |
+| seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 221 KB |
+| ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 约 6 秒 · 640×472 · 24 fps | 约 109 KB |
+| seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 217 KB |
 | angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 6 秒 · 640×472 · 24 fps | 约 206 KB |
 
 [CRAFTLINE Ink Reveal 在线演示](https://craftline-ink-reveal.vercel.app/) · [6 秒轻量视频](designs/ink-reveal/assets/demo-mini.mp4)
