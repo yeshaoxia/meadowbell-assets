@@ -10,13 +10,15 @@
 | [CRAFTLINE · Ink Reveal](designs/ink-reveal/) | [index.html](designs/ink-reveal/index.html) | [prompt.md](designs/ink-reveal/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/ink-reveal/download.zip) |
 | [SeamSites · Angel / Devil](designs/angel-devil/) | [index.html](designs/angel-devil/index.html) | [prompt.md](designs/angel-devil/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/angel-devil/download.zip) |
 
+| [SeamSites · Heroic Universe](designs/heroic-universe/) | [index.html](designs/heroic-universe/index.html) | [prompt.md](designs/heroic-universe/prompt.md) | [ZIP](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/main/designs/heroic-universe/download.zip) |
+
 [SeamSites · Motion 在线演示](https://saffron-webgl-recreation.vercel.app)：六段前端设计主题粒子交互，包含细化分枝大树与双层星环星球。
 
 ## 查看效果
 
 下载任一项目 ZIP，完整解压，打开 index.html。也可以下载整个仓库，在本地打开根目录 index.html，统一进入全部演示。
 
-当前收录 ORBE、SeamSites 四季森林、SeamSites Motion、CRAFTLINE Ink Reveal、Angel / Devil 五个交互设计项目。
+当前收录 ORBE、SeamSites 四季森林、SeamSites Motion、CRAFTLINE Ink Reveal、Angel / Devil、Heroic Universe 六个交互设计项目。
 
 ## 链接稳定性
 
@@ -34,6 +36,7 @@
 | seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 221 KB |
 | ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 约 6 秒 · 640×472 · 24 fps | 约 109 KB |
 | seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 约 6 秒 · 640×360 · 24 fps | 约 217 KB |
+| heroic-universe | [视频](designs/heroic-universe/assets/demo-mini.mp4) | 6 秒 · 640×360 · 24 fps | 约 104 KB |
 | angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 6 秒 · 640×472 · 24 fps | 约 206 KB |
 
 [CRAFTLINE Ink Reveal 在线演示](https://craftline-ink-reveal.vercel.app/) · [6 秒轻量视频](designs/ink-reveal/assets/demo-mini.mp4)
@@ -41,3 +44,8 @@
 [Angel / Devil 在线演示](https://seamsites-angel-devil.vercel.app/) · [鼠标局部显影](designs/angel-devil/)
 
 Angel / Devil V2：珠光暗金导航、玫瑰云境与珍珠拱廊，天使羽尘圣光和恶魔局部余烬。
+
+
+[Heroic Universe 在线演示](https://seamsites-heroic-universe.headybell1.chatgpt.site)（Sites 私有演示，需拥有者账户访问） · [项目文件](designs/heroic-universe/) · [英文提示词](designs/heroic-universe/prompt.md)
+
+Heroic Universe：原创机械骑士与星际游侠，局部人物呼吸、能量灯、红雾余烬、三种人物视图、可访问弹窗与沉浸观赏模式。
