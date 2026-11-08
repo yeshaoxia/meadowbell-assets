@@ -1,0 +1,11 @@
+# Duality portrait assets
+
+Generated with the built-in Image Gen tool. Both final RGBA images are 1086 × 1448. The devil was an edit of the angel for registration, not an independent generation.
+
+## Angel generation prompt
+
+Create an extraordinarily polished photographic portrait of an adult female angel, straight-on symmetrical pose, waist-up hips cut at bottom, neutral composed confident expression looking directly at camera. Portrait 3:4, cutout on genuinely transparent background. Face centered x=50%, eyes y=29%, hair top y=10%, shoulders y=45%, waist y=88%. Arms relaxed at sides. Exquisite natural face with realistic skin pores and subtle makeup, platinum silver center-parted hair flowing over shoulders. Haute couture fully clothed ivory silk and pearl-silver sculpted bodice and long sleeves with engraved botanical filigree and delicate crystals. Large layered real ivory feather wings behind both shoulders, spread to x=4% and96%, upper tips y=29%, lower feathers to y=80%. Slim pale golden halo above head. Soft directional editorial studio light, warm ivory highlights and subtle blush shadows, refined dynamic range, medium-format 85mm fashion photograph. No scenery, ground, text, graphics, border, watermark, plastic CGI or fantasy painting. Simple symmetrical fixed registration for a hover reveal counterpart.
+
+## Devil edit prompt
+
+Edit the exact angel cutout into her demonic alter ego, pixel registered to the original. Keep identical canvas dimensions, crop, woman, face anatomy, feature positions, head angle, shoulders, arms, waistline, body contour, wing outline, feather positions and hair silhouette. Do not zoom or recenter. Only replace textures and materials: near-black burgundy hair, intricately engraved graphite-black and deep oxblood couture armor preserving seams and filigree, fully covered neckline and long sleeves. Garnet jewels. Black raven-feather wings with minute wine iridescence and identical silhouette. Replace halo with elegant curved obsidian ridged horns in its upper region. Same face with restrained smoky makeup, dark crimson lips and subtle ember iris gleam, realistic skin. Extremely subtle red light tracing armor engraving. Luxury dark fantasy fashion photography, tactile leather, dimensional metallic details. Keep genuine transparent background. No text, scenery, particles, gore, weapons or nudity.
