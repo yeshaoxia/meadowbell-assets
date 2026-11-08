@@ -7,3 +7,9 @@ Use the six chapter buttons, wheel, arrow keys, or swipe. The final chapter has 
 This is a working reference-based reconstruction, not the original source code and not a pixel-identical recreation. Original shaders, source geometry, fonts, audio and exact event timings are unavailable. The flow material and intermediate point motion remain different. The reference video is not included or played as a background.
 
 Assets: reference-derived particle coordinate data, a generated silk texture, and a cropped source brand mark. The English prompt reproduces THIS implementation using fixed-version asset links; natural-language generation alone cannot guarantee identical output across tools.
+
+## 网页预览视频
+
+[播放 / 下载轻量 MP4](assets/demo-mini.mp4) · 5.8 秒 · 约 50 KB · 480×270 · 无音轨。
+
+展示本项目实际页面的动态效果。适合网页卡片静音循环预览。

@@ -24,3 +24,16 @@ ORBE 与 SeamSites 为完整交互设计。Meadowbell、Lumora 原来只有素�
 所有提示词中的仓库素材、代码参考均固定到具体 Git 提交版本，而不是 main。后续整理或更新不会改变这些快照地址。仓库删除、改私有或网络限制仍可能影响在线访问，所以每个项目同时提供含本地素材的离线包。
 
 以后新设计继续使用 designs/项目名/，不增加空目录或复杂层级。
+
+## 项目视频预览
+
+每个项目的轻量视频统一保存在 `designs/项目名/assets/demo-mini.mp4`。项目 README、下表及作品集入口都可以找到视频。视频与说明也已加入对应完整下载包。
+
+| 项目 | MP4 预览 | 时长 | 体积 |
+| --- | --- | --- | --- |
+| meadowbell | [视频](designs/meadowbell/assets/demo-mini.mp4) | 5.1 秒 | 约 75 KB |
+| lumora | [视频](designs/lumora/assets/demo-mini.mp4) | 5.1 秒 | 约 18 KB |
+| orbe-planet-atlas | [视频](designs/orbe-planet-atlas/assets/demo-mini.mp4) | 5.9 秒 | 约 28 KB |
+| seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 5.6 秒 | 约 68 KB |
+| saffron | [视频](designs/saffron/assets/demo-mini.mp4) | 5.8 秒 | 约 50 KB |
+| seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 6.0 秒 | 约 111 KB |
