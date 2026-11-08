@@ -21,7 +21,7 @@ These are immutable Git commit URLs. The most reliable reproduction is to downlo
 - Desktop visual truth, 1280 × 944: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/14e1ceea0cb27d757f283dc51dc3e7cd59abf3b5/designs/angel-devil/previews/desktop.png
 - Actual reveal state: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/14e1ceea0cb27d757f283dc51dc3e7cd59abf3b5/designs/angel-devil/previews/reveal.png
 - Mobile visual truth, 390 × 844: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/14e1ceea0cb27d757f283dc51dc3e7cd59abf3b5/designs/angel-devil/previews/mobile.png
-- Actual six-second browser page recording: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/14e1ceea0cb27d757f283dc51dc3e7cd59abf3b5/designs/angel-devil/assets/demo-mini.mp4
+- Actual six-second browser page recording: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/851077bb2cfe3d048ed3cd75e4ca8b92e3b24e47/designs/angel-devil/assets/demo-mini.mp4
 - Original portrait, background and feather generation prompts: https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/14e1ceea0cb27d757f283dc51dc3e7cd59abf3b5/designs/angel-devil/asset-prompts.md
 
 The earlier interaction inspiration was the user-supplied Pink Rider video: https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/designs/pink-rider-portfolio.mp4 . For this V2, the linked screenshots and implementation take precedence over that earlier pink flat-background layout. Do not embed the video as a replacement for a working page.
@@ -73,3 +73,6 @@ Supply local assets, readable source, portable production files, updated English
 Verify desktop and mobile layouts, all images, local reveal restoration, halo/horn replacement, gold feathers versus red embers, menus, keyboard controls and local brief behavior. Compare the real page to the linked V2 desktop/mobile targets.
 
 For exact reproduction, preserve the linked original assets and code. A prompt by itself, regenerated images, inaccessible external URLs or differences between AI platforms cannot guarantee identical output.
+
+
+Preview encoding update: the linked MP4 is six seconds, 640 × 472, 24 fps, H.264 fast-start, about 206 KB. It was re-recorded by compositing the actual live canvas layers with cached static interface layers; all 144 output frames are distinct. Keep a similar balance between visible clarity, smooth motion and web payload size.

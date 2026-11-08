@@ -34,7 +34,7 @@
 | seamsites | [视频](designs/seamsites/assets/demo-mini.mp4) | 5.6 秒 | 约 68 KB |
 | ink-reveal | [视频](designs/ink-reveal/assets/demo-mini.mp4) | 6.0 秒 | 约 49 KB |
 | seamsites-motion | [视频](designs/seamsites-motion/assets/demo-mini.mp4) | 6.0 秒 | 约 111 KB |
-| angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 约 6 秒 | 约 75 KB |
+| angel-devil | [视频](designs/angel-devil/assets/demo-mini.mp4) | 6 秒 · 640×472 · 24 fps | 约 206 KB |
 
 [CRAFTLINE Ink Reveal 在线演示](https://craftline-ink-reveal.vercel.app/) · [6 秒轻量视频](designs/ink-reveal/assets/demo-mini.mp4)
 

@@ -36,3 +36,6 @@ React and Heroicons are included in the self-contained build. The two original p
 ## Fidelity
 
 The layout, rolling typography, pink palette and transient local reveal follow the supplied video. Character artwork, branding, text and otherwise unseen menu contents are intentionally adapted. This is an interactive recreation, not the original source project or a guarantee of frame-identical output. Other AI platforms may vary; reuse the linked assets and implementation for the closest result.
+
+
+Preview video update: six seconds, 640 × 472, 24 fps, approximately 206 KB. H.264 with fast-start, no audio. Re-recorded from live canvas layers for continuous motion.

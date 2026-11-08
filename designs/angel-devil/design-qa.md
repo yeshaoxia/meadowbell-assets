@@ -31,3 +31,6 @@ Opened the updated Atelier dialog and inspected both portraits. Checked Escape r
 ## P3 / limits
 
 Environment is a photographic plate with slow pan, scale and lighting, not a newly simulated 3D world. Feathers and glints are intentionally delicate; the stronger red effects occur locally during revelation. Exact particle positions and marquee phase vary with time and pointer motion.
+
+
+Video revision: browser playback verified with 640 × 472 dimensions, six-second duration, readyState 4 and active playback. The 24 fps MP4 has 144 decoded frames, all distinct, with zero adjacent duplicate frames. Payload: 206,367 bytes.
