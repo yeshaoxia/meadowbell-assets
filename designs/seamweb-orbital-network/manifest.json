@@ -1,0 +1,13 @@
+{
+  "slug": "seamweb-orbital-network",
+  "title": "SeamWeb 灵感星系 · 金属 Logo 轨道交互首屏",
+  "title_en": "SeamWeb Orbital Network — Reflective Logo Hero",
+  "scope": "single viewport",
+  "reference": "https://openrouter.ai/",
+  "cover": "assets/cover.webp",
+  "video": "assets/demo-mini.mp4",
+  "code": "index.html",
+  "prompt": "prompt.md",
+  "download": "download.zip",
+  "created": "2026-11-22"
+}

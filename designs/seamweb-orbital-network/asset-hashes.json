@@ -1,0 +1,21 @@
+{
+  "app.js": "59a970655f2f1743b5e069295fe3d62204db80602324dcaf6c0cc77b62da13c9",
+  "assets/cover.webp": "51d7376e99c4c6299e3b4decb99de4e5bbe831eae0b0621c80bc42615c0de2b6",
+  "assets/demo-mini.mp4": "df038785e8a4b46df248dcb43f8764ded3d12eb18f14cd95a46a54ab1d1f9345",
+  "assets/seam-sans-0.woff2": "13efb2b55579315f12ab2d021dedd3d5584214e1e666deffc094bfcd07e0140f",
+  "assets/seam-sans-1.woff2": "530b46b8a30f1699c90d9ebdcadd86043aae84122969bd85603e2e45c692c92d",
+  "assets/seam-sans-2.woff2": "1c1765ba449712a1de3a97b740a2fd23a14841ebfae61b0d66806c3461fa6674",
+  "assets/seam-sans-3.woff2": "c8d4eba3b7b59ee517940563f13c5deaabcf7b4fc02d7af78d7eff3b7db1f23e",
+  "build.mjs": "3c83a799b87b6fa9cc5ad8d25974b4b406bea617afd375ffcd96d184f5ee5efa",
+  "FONT-LICENSE.txt": "e35ffdebb2225b49814c31889cbb3ce69cb3509e6a9f431edaba5e1a6de8cd15",
+  "font.css": "ef7994c0d6b969c160b4df01d547d84190a1340afdf94352f98ce94387a87ad7",
+  "index.html": "2feff4ca1cb489dda5d09a4506dfffe0665d479f7bb3269030ab396891c603d0",
+  "index.template.html": "16285db1401c77550703f7793400835197bf13c5295f846ae8e742f31df18a7c",
+  "manifest.json": "70d8ea8e2762d4b016d702569c8b469eca39c4cdfa11b50ef391b638ffd95375",
+  "package.json": "e1f9cc2496ae65bc0bb2147ec306974a06e1df5b3708074e7045704800b84257",
+  "prompt-en.md": "da9ed6eefbe2f952f910c1cf60b8b1672cb0ad4f92520ef743ed54c837812ce8",
+  "prompt.md": "432556300f159fd1b275c340a30be86df6422dd14d5d780180e8571aeac0deb6",
+  "README.md": "1f20e032b5c2405705c6ff7ba9afa353106efc14efd1ae7a52180a05347064a9",
+  "style.css": "730103c899c0291fc7a05331d4e78d0274656ebdda9749750633f11f32993124",
+  "THREE-LICENSE.txt": "fc2fcd950bcd50e40a960bab8805b0524222607529a7b88806fa6d529034b47a"
+}
