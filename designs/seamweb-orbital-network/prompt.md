@@ -13,3 +13,17 @@
 实现真实提示词复制、原生弹窗、导航入口、中英切换、暂停；适配桌面/平板/手机。尊重 prefers-reduced-motion，隐藏标签页时停止渲染。输出含完整内联代码的 index.html，提供可编辑源码与 npm 构建脚本，运行不依赖远程字体或 CDN。
 
 本包为完整可运行的交互实现，直接解压并打开 index.html。源码、字体、封面及演示视频均已包含。
+
+## Pinned project files / 固定版本文件
+
+- [index.html](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/index.html)
+- [app.js](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/app.js)
+- [style.css](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/style.css)
+- [index.template.html](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/index.template.html)
+- [font.css](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/font.css)
+- [assets/cover.webp](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/cover.webp)
+- [assets/demo-mini.mp4](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/demo-mini.mp4)
+- [assets/seam-sans-0.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-0.woff2)
+- [assets/seam-sans-1.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-1.woff2)
+- [assets/seam-sans-2.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-2.woff2)
+- [assets/seam-sans-3.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-3.woff2)

@@ -9,3 +9,17 @@ Draw a dense Canvas network of 35 main hubs on seven slightly tilted elliptical 
 Add a low-brightness shooting star every 10.5 seconds lasting 1.25 seconds. Include Chinese/English copy, clipboard prompt copying, native dialogs, valid navigation links, pause, responsive layout, embedded local Noto Sans SC font subsets and reduced-motion support. Stop rendering while the document is hidden. Supply a complete offline index.html plus editable JS/CSS/template files and npm build instructions.
 
 The archive includes the working HTML, editable source, fonts, cover and demonstration video. Open index.html after extraction.
+
+## Pinned project files / 固定版本文件
+
+- [index.html](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/index.html)
+- [app.js](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/app.js)
+- [style.css](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/style.css)
+- [index.template.html](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/index.template.html)
+- [font.css](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/font.css)
+- [assets/cover.webp](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/cover.webp)
+- [assets/demo-mini.mp4](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/demo-mini.mp4)
+- [assets/seam-sans-0.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-0.woff2)
+- [assets/seam-sans-1.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-1.woff2)
+- [assets/seam-sans-2.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-2.woff2)
+- [assets/seam-sans-3.woff2](https://raw.githubusercontent.com/yeshaoxia/meadowbell-assets/62b1b44553cb5fcecd7cd30b77fd6e9dec3d90fc/designs/seamweb-orbital-network/assets/seam-sans-3.woff2)
